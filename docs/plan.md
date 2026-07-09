@@ -1,5 +1,36 @@
 # Gaming Store Website — Build Plan for Claude Code
 
+## Locked-in decisions & clarifications (2026-07-09)
+These resolve ambiguities in the plan below. If anything here conflicts with the sections that follow, THIS section wins.
+
+**Visual identity**
+- Accent color: **neon green** on a dark theme (single vibrant accent, per plan).
+- Fonts: **Space Grotesk** for headings/logo, **Inter** for body (both from Google Fonts, self-hosted where possible).
+
+**Information architecture**
+- Three separate showcase pages (not tabs): `/consoles`, `/games`, `/accessories`. Better SEO and cleaner deep-links from the home tiles.
+- Home tiles link directly to each showcase page + `/repairs`.
+
+**Sample content**
+- Placeholder product images: **distinct SVG gradient cards per product**, generated at build time — each product gets a unique gradient + name overlay. No hotlinked external images. Stored under `/public/products/`.
+- TikTok placeholders: use **real public gaming TikTok video IDs** in `data/tiktok.json` so the embed section actually renders during dev. Swap for the real business's videos when provided.
+
+**Business identity placeholders (in `data/site.json`)**
+- Name: `GameHub LK`
+- Tagline: `Consoles. Games. Repairs. All in one place.`
+- WhatsApp: `94770000000`
+- Location: placeholder Colombo address
+- Phone/hours: realistic placeholders
+
+**Tech baseline**
+- Node 20 LTS, npm (not pnpm/yarn), Next.js 14 **App Router**, TypeScript **strict**.
+- Tailwind default preset extended with our design tokens (neon green accent, Space Grotesk / Inter font families).
+
+**Build cadence**
+- One commit per plan step (nine steps total). Run `npm run build` after each step; do not commit if the static export fails.
+
+---
+
 ## Project overview
 A simple, fast showcase website for a new gaming store business in Sri Lanka (reference for inspiration: tecroot.lk — but this is a showcase site, NOT an e-commerce store). No backend, no database, no prices for now.
 
