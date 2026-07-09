@@ -1,5 +1,12 @@
 # Gaming Store Website — Build Plan for Claude Code
 
+## Git & commit conventions
+- **No `Co-Authored-By` trailers.** Commit and push as the user (Kasun24) only — no Claude co-author lines.
+- Author identity for all commits: the repo's configured `user.name` / `user.email` (Kasun24).
+- Push directly to `origin/main` unless a branch/PR is explicitly requested.
+
+---
+
 ## Project overview
 A simple, fast showcase website for a new gaming store business in Sri Lanka (reference for inspiration: tecroot.lk — but this is a showcase site, NOT an e-commerce store). No backend, no database, no prices for now.
 
