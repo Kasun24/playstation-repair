@@ -31,6 +31,15 @@ const config: Config = {
         'grid-fade':
           'radial-gradient(circle at center, rgba(57,255,20,0.06), transparent 60%)',
       },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 2.4s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
