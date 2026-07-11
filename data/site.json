@@ -1,0 +1,24 @@
+{
+  "name": "GameHub LK",
+  "tagline": "Consoles. Games. Repairs. All in one place.",
+  "description": "Sri Lanka's friendly neighbourhood gaming store — new and pre-owned consoles, the latest game titles, quality accessories, and fast, trustworthy repairs.",
+  "whatsapp": "94770000000",
+  "whatsappDisplay": "+94 77 000 0000",
+  "phone": "+94 11 234 5678",
+  "email": "hello@gamehub.lk",
+  "address": {
+    "street": "42 Galle Road",
+    "city": "Colombo 03",
+    "country": "Sri Lanka"
+  },
+  "hours": [
+    { "days": "Mon – Sat", "time": "10:00 – 20:00" },
+    { "days": "Sun", "time": "12:00 – 18:00" }
+  ],
+  "socials": {
+    "tiktok": "https://www.tiktok.com/@gamehublk",
+    "instagram": "https://www.instagram.com/gamehublk",
+    "facebook": "https://www.facebook.com/gamehublk"
+  },
+  "_note": "All fields are placeholder values until the real business identity is provided. Update this file (and this note) when the actual details are in."
+}

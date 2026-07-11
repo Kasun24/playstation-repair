@@ -1,0 +1,31 @@
+{
+  "profileUrl": "https://www.tiktok.com/@gamehublk",
+  "handle": "@gamehublk",
+  "_note": "Placeholder video IDs from popular public gaming accounts. Verify each embed still renders during Step 8; swap for the real business's videos when provided.",
+  "videos": [
+    {
+      "id": "7233421245234421035",
+      "username": "playstation",
+      "url": "https://www.tiktok.com/@playstation/video/7233421245234421035",
+      "caption": "PS5 highlight reel"
+    },
+    {
+      "id": "7176038929920036101",
+      "username": "xbox",
+      "url": "https://www.tiktok.com/@xbox/video/7176038929920036101",
+      "caption": "Xbox Series X gameplay"
+    },
+    {
+      "id": "7145834820218473771",
+      "username": "nintendoamerica",
+      "url": "https://www.tiktok.com/@nintendoamerica/video/7145834820218473771",
+      "caption": "Nintendo Switch moments"
+    },
+    {
+      "id": "7280614382143507755",
+      "username": "playstation",
+      "url": "https://www.tiktok.com/@playstation/video/7280614382143507755",
+      "caption": "New releases showcase"
+    }
+  ]
+}

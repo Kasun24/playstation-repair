@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="1TB Storage Expansion">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1305"/>
+      <stop offset="1" stop-color="#eab308"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.22" r="0.65">
+      <stop offset="0" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <path d="M 560 0 L 800 0 L 800 240 Z" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="700" cy="500" r="160" fill="rgba(255,255,255,0.04)"/>
+  <rect x="60" y="60" rx="6" ry="6" width="112" height="30" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="116" y="80" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600" font-size="13" fill="#e2e8f0" letter-spacing="2">ACCESSORY</text>
+  <text x="60" y="480" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="56" fill="#f8fafc">1TB Storage</text>
+  <text x="60" y="544" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="56" fill="#f8fafc">Expansion</text>
+  <rect x="60" y="558" width="80" height="4" fill="#39ff14"/>
+</svg>

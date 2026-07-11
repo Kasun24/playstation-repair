@@ -1,0 +1,39 @@
+{
+  "repairs": [
+    {
+      "id": "repair-hdmi-port",
+      "name": "HDMI Port Replacement",
+      "description": "No picture on your TV? Wobbly cable? We desolder the damaged port and fit a fresh one — full test before you collect.",
+      "turnaround": "2 – 3 days",
+      "icon": "Cable"
+    },
+    {
+      "id": "repair-stick-drift",
+      "name": "Controller Stick Drift Fix",
+      "description": "Character walking on its own? We replace the analog stick modules on DualSense, Xbox, and Joy-Con controllers.",
+      "turnaround": "Same day – 1 day",
+      "icon": "Gamepad2"
+    },
+    {
+      "id": "repair-clean-thermal-paste",
+      "name": "Deep Clean & Thermal Paste",
+      "description": "Loud fans and shutdowns are usually dust and dried paste. Full teardown, deep clean, and fresh premium thermal compound.",
+      "turnaround": "1 – 2 days",
+      "icon": "Wind"
+    },
+    {
+      "id": "repair-disc-drive",
+      "name": "Disc Drive Repair",
+      "description": "Discs not reading, ejecting, or getting stuck? Laser realignment or full drive replacement — we handle all common faults.",
+      "turnaround": "2 – 4 days",
+      "icon": "Disc"
+    },
+    {
+      "id": "repair-storage-upgrade",
+      "name": "SSD Storage Upgrade",
+      "description": "Run out of space? We fit certified NVMe SSDs into your PS5 or Xbox Series X|S and restore your saves — no data loss.",
+      "turnaround": "Same day – 1 day",
+      "icon": "HardDrive"
+    }
+  ]
+}

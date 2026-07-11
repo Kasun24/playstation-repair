@@ -1,0 +1,239 @@
+{
+  "products": [
+    {
+      "id": "console-ps5-slim",
+      "name": "PlayStation 5 Slim",
+      "category": "consoles",
+      "condition": "new",
+      "shortDescription": "The full PS5 experience in a lighter, sleeker chassis — ray-traced next-gen games with an ultra-fast SSD.",
+      "tags": ["PlayStation", "Next-Gen"],
+      "image": "/products/console-ps5-slim.svg"
+    },
+    {
+      "id": "console-ps5-digital",
+      "name": "PS5 Digital Edition",
+      "category": "consoles",
+      "condition": "new",
+      "shortDescription": "The disc-free PS5 for a fully digital library — same power, lower footprint, ready for PS Plus streaming.",
+      "tags": ["PlayStation", "Digital"],
+      "image": "/products/console-ps5-digital.svg"
+    },
+    {
+      "id": "console-ps4-pro",
+      "name": "PlayStation 4 Pro",
+      "category": "consoles",
+      "condition": "pre-owned",
+      "shortDescription": "Fully tested pre-owned PS4 Pro — 4K-ready for the huge PS4 catalog. Includes controller and cables.",
+      "tags": ["PlayStation", "Pre-Owned"],
+      "image": "/products/console-ps4-pro.svg"
+    },
+    {
+      "id": "console-xbox-series-x",
+      "name": "Xbox Series X",
+      "category": "consoles",
+      "condition": "new",
+      "shortDescription": "Microsoft's flagship: 4K gaming at 60fps (up to 120fps), whisper-quiet cooling, and Quick Resume across titles.",
+      "tags": ["Xbox", "Next-Gen"],
+      "image": "/products/console-xbox-series-x.svg"
+    },
+    {
+      "id": "console-xbox-series-s",
+      "name": "Xbox Series S",
+      "category": "consoles",
+      "condition": "new",
+      "shortDescription": "Compact all-digital Xbox with 1440p gaming and full Game Pass support — an unbeatable entry into next-gen.",
+      "tags": ["Xbox", "Digital"],
+      "image": "/products/console-xbox-series-s.svg"
+    },
+    {
+      "id": "console-switch-oled",
+      "name": "Nintendo Switch OLED",
+      "category": "consoles",
+      "condition": "new",
+      "shortDescription": "Vivid 7-inch OLED screen, enhanced audio, and a sturdier kickstand — the definitive way to play Switch.",
+      "tags": ["Nintendo", "Handheld"],
+      "image": "/products/console-switch-oled.svg"
+    },
+    {
+      "id": "console-steam-deck",
+      "name": "Steam Deck",
+      "category": "consoles",
+      "condition": "new",
+      "shortDescription": "A full PC gaming rig you can hold — play your entire Steam library on the go with responsive controls.",
+      "tags": ["PC", "Handheld"],
+      "image": "/products/console-steam-deck.svg"
+    },
+
+    {
+      "id": "game-spider-man-2",
+      "name": "Marvel's Spider-Man 2",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5"],
+      "shortDescription": "Swing across a bigger New York as Peter and Miles. Faster traversal, symbiote powers, and a story that hits hard.",
+      "tags": ["Action", "Adventure", "Exclusive"],
+      "image": "/products/game-spider-man-2.svg"
+    },
+    {
+      "id": "game-god-of-war-ragnarok",
+      "name": "God of War Ragnarök",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5", "PS4"],
+      "shortDescription": "Kratos and Atreus race to prevent Ragnarök. Brutal combat, breathtaking realms, and one of the decade's best stories.",
+      "tags": ["Action", "Adventure"],
+      "image": "/products/game-god-of-war-ragnarok.svg"
+    },
+    {
+      "id": "game-elden-ring",
+      "name": "Elden Ring",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5", "PS4", "Xbox Series X|S", "Xbox One"],
+      "shortDescription": "FromSoftware's open-world masterpiece. Every horizon is a new challenge, every ruin hides a story worth dying for.",
+      "tags": ["RPG", "Open World"],
+      "image": "/products/game-elden-ring.svg"
+    },
+    {
+      "id": "game-fc25",
+      "name": "EA Sports FC 25",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "Switch"],
+      "shortDescription": "The next chapter of football sim — smarter AI teammates, new Rush 5v5 mode, and refreshed Ultimate Team.",
+      "tags": ["Sports"],
+      "image": "/products/game-fc25.svg"
+    },
+    {
+      "id": "game-mortal-kombat-1",
+      "name": "Mortal Kombat 1",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5", "Xbox Series X|S", "Switch"],
+      "shortDescription": "A reborn MK universe with Kameo tag-team fighters. Cinematic Fatalities, tight combat, and a shocking Invasions mode.",
+      "tags": ["Fighting"],
+      "image": "/products/game-mortal-kombat-1.svg"
+    },
+    {
+      "id": "game-hogwarts-legacy",
+      "name": "Hogwarts Legacy",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "Switch"],
+      "shortDescription": "Live the Hogwarts you dreamed of — brew potions, master spells, and explore a Wizarding World open at your pace.",
+      "tags": ["RPG", "Adventure"],
+      "image": "/products/game-hogwarts-legacy.svg"
+    },
+    {
+      "id": "game-mario-kart-8",
+      "name": "Mario Kart 8 Deluxe",
+      "category": "games",
+      "condition": "new",
+      "platform": ["Switch"],
+      "shortDescription": "The definitive Mario Kart — 96 tracks, 8-player local play, and enough blue shells to end friendships beautifully.",
+      "tags": ["Racing", "Party"],
+      "image": "/products/game-mario-kart-8.svg"
+    },
+    {
+      "id": "game-forza-horizon-5",
+      "name": "Forza Horizon 5",
+      "category": "games",
+      "condition": "new",
+      "platform": ["Xbox Series X|S", "Xbox One"],
+      "shortDescription": "Race across a stunning open-world Mexico. Hundreds of cars, seasonal events, and jaw-dropping 4K visuals on Series X.",
+      "tags": ["Racing", "Open World"],
+      "image": "/products/game-forza-horizon-5.svg"
+    },
+    {
+      "id": "game-cyberpunk-2077",
+      "name": "Cyberpunk 2077",
+      "category": "games",
+      "condition": "new",
+      "platform": ["PS5", "PS4", "Xbox Series X|S", "Xbox One"],
+      "shortDescription": "Night City is finally at its best — patched, expanded, and ready for you to write your own outlaw legend.",
+      "tags": ["RPG", "Open World"],
+      "image": "/products/game-cyberpunk-2077.svg"
+    },
+    {
+      "id": "game-tears-of-the-kingdom",
+      "name": "Zelda: Tears of the Kingdom",
+      "category": "games",
+      "condition": "new",
+      "platform": ["Switch"],
+      "shortDescription": "Build, glide, and Ultrahand your way across Hyrule and the skies above. Nintendo at the top of its craft.",
+      "tags": ["Adventure", "Exclusive"],
+      "image": "/products/game-tears-of-the-kingdom.svg"
+    },
+
+    {
+      "id": "accessory-dualsense-controller",
+      "name": "DualSense Wireless Controller",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["PS5"],
+      "shortDescription": "Haptic feedback and adaptive triggers that let you feel every impact. Available in multiple colourways.",
+      "tags": ["Controller", "PlayStation"],
+      "image": "/products/accessory-dualsense-controller.svg"
+    },
+    {
+      "id": "accessory-xbox-controller",
+      "name": "Xbox Wireless Controller",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["Xbox Series X|S", "Xbox One", "PC"],
+      "shortDescription": "The gold standard for comfort and precision. Hybrid D-pad, textured grips, and seamless device switching.",
+      "tags": ["Controller", "Xbox"],
+      "image": "/products/accessory-xbox-controller.svg"
+    },
+    {
+      "id": "accessory-pulse-3d-headset",
+      "name": "Pulse 3D Wireless Headset",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["PS5", "PS4"],
+      "shortDescription": "Tempest 3D AudioTech tuned for PS5. Dual noise-cancelling mics and up to 12 hours on a charge.",
+      "tags": ["Audio", "PlayStation"],
+      "image": "/products/accessory-pulse-3d-headset.svg"
+    },
+    {
+      "id": "accessory-dualsense-charging-dock",
+      "name": "DualSense Charging Station",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["PS5"],
+      "shortDescription": "Dock and charge two DualSense controllers at once — no console needed. Compact desk-friendly footprint.",
+      "tags": ["Charging", "PlayStation"],
+      "image": "/products/accessory-dualsense-charging-dock.svg"
+    },
+    {
+      "id": "accessory-console-cooling-stand",
+      "name": "Vertical Cooling Stand",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["PS5", "Xbox Series X|S"],
+      "shortDescription": "Silent multi-fan cooling stand with dual controller charging and USB hub. Stops thermal throttling on long sessions.",
+      "tags": ["Cooling", "Stand"],
+      "image": "/products/accessory-console-cooling-stand.svg"
+    },
+    {
+      "id": "accessory-switch-carry-case",
+      "name": "Switch Carry Case",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["Switch"],
+      "shortDescription": "Hard-shell case that fits your Switch, dock, and up to 10 game cards. Take your setup anywhere without worry.",
+      "tags": ["Case", "Nintendo"],
+      "image": "/products/accessory-switch-carry-case.svg"
+    },
+    {
+      "id": "accessory-memory-card-1tb",
+      "name": "1TB Storage Expansion",
+      "category": "accessories",
+      "condition": "new",
+      "platform": ["PS5", "Xbox Series X|S"],
+      "shortDescription": "Officially certified 1TB expansion — install and play next-gen titles at full speed. Plug-and-play, no fiddling.",
+      "tags": ["Storage"],
+      "image": "/products/accessory-memory-card-1tb.svg"
+    }
+  ]
+}
