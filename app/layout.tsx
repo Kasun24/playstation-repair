@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import { SITE, SITE_URL } from '@/lib/data';
 import './globals.css';
 
 const inter = Inter({
@@ -17,12 +18,95 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
+const DEFAULT_TITLE = `${SITE.name} — Consoles, Games & Repairs`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'GameHub LK — Consoles, Games & Repairs',
-    template: '%s · GameHub LK',
+    default: DEFAULT_TITLE,
+    template: `%s · ${SITE.name}`,
   },
-  description: 'Consoles. Games. Repairs. All in one place.',
+  description: SITE.description,
+  keywords: [
+    'gaming store Sri Lanka',
+    'PlayStation Colombo',
+    'Xbox Colombo',
+    'Nintendo Switch Sri Lanka',
+    'console repairs Colombo',
+    'HDMI port repair',
+    'controller drift fix',
+    'PS5 Sri Lanka',
+    SITE.name,
+  ],
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name }],
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: SITE.name,
+    title: DEFAULT_TITLE,
+    description: SITE.description,
+    url: '/',
+    locale: 'en_LK',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: DEFAULT_TITLE,
+    description: SITE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  formatDetection: { telephone: true, email: true, address: true },
+};
+
+export const viewport = {
+  themeColor: '#0a0a0f',
+  colorScheme: 'dark' as const,
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE_URL,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressCountry: 'LK',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ],
+      opens: '10:00',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '12:00',
+      closes: '18:00',
+    },
+  ],
+  sameAs: [
+    SITE.socials.tiktok,
+    SITE.socials.instagram,
+    SITE.socials.facebook,
+  ],
 };
 
 export default function RootLayout({
@@ -33,10 +117,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-black focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bg"
+        >
+          Skip to content
+        </a>
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <main id="main-content" className="flex-1 scroll-mt-20">
+          {children}
+        </main>
         <Footer />
         <FloatingWhatsApp />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );

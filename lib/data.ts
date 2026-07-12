@@ -33,6 +33,7 @@ export type TikTokVideo = {
 };
 
 export const SITE = siteJson;
+export const SITE_URL = siteJson.siteUrl;
 export const PRODUCTS: Product[] = productsJson.products as Product[];
 export const REPAIRS: Repair[] = repairsJson.repairs as Repair[];
 export const TIKTOK = tiktokJson as {

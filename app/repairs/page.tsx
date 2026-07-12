@@ -55,7 +55,7 @@ const STEPS = [
 
 export default function RepairsPage() {
   return (
-    <main>
+    <>
       <section className="container-page py-16 sm:py-20">
         <header>
           <p className="text-xs uppercase tracking-[0.22em] text-accent">
@@ -187,6 +187,6 @@ export default function RepairsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

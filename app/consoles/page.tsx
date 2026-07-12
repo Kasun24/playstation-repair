@@ -13,11 +13,11 @@ export default function ConsolesPage() {
   const meta = CATEGORY_META.consoles;
   const products = productsByCategory('consoles');
   return (
-    <main className="container-page py-16 sm:py-20">
+    <section className="container-page py-16 sm:py-20">
       <ShowcaseHeader title={meta.title} blurb={meta.blurb} />
       <div className="mt-10">
         <ShowcaseGrid products={products} placeholder="Search consoles…" />
       </div>
-    </main>
+    </section>
   );
 }

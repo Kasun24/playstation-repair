@@ -13,11 +13,11 @@ export default function AccessoriesPage() {
   const meta = CATEGORY_META.accessories;
   const products = productsByCategory('accessories');
   return (
-    <main className="container-page py-16 sm:py-20">
+    <section className="container-page py-16 sm:py-20">
       <ShowcaseHeader title={meta.title} blurb={meta.blurb} />
       <div className="mt-10">
         <ShowcaseGrid products={products} placeholder="Search accessories…" />
       </div>
-    </main>
+    </section>
   );
 }

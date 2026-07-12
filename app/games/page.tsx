@@ -13,11 +13,11 @@ export default function GamesPage() {
   const meta = CATEGORY_META.games;
   const products = productsByCategory('games');
   return (
-    <main className="container-page py-16 sm:py-20">
+    <section className="container-page py-16 sm:py-20">
       <ShowcaseHeader title={meta.title} blurb={meta.blurb} />
       <div className="mt-10">
         <ShowcaseGrid products={products} placeholder="Search games…" />
       </div>
-    </main>
+    </section>
   );
 }
