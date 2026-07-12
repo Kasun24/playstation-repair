@@ -1,7 +1,7 @@
 import Hero from '@/components/home/Hero';
 import CategoryTiles from '@/components/home/CategoryTiles';
 import TrustSection from '@/components/home/TrustSection';
-import TikTokPlaceholder from '@/components/home/TikTokPlaceholder';
+import TikTokSection from '@/components/home/TikTokSection';
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
       <Hero />
       <CategoryTiles />
       <TrustSection />
-      <TikTokPlaceholder />
+      <TikTokSection />
     </>
   );
 }
