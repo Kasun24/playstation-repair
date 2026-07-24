@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
-const DEFAULT_TITLE = `${SITE.name} — Consoles, Games & Repairs`;
+const DEFAULT_TITLE = `${SITE.name} — PlayStation Repairs, Consoles & Games`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   keywords: [
-    'gaming store Sri Lanka',
-    'PlayStation Colombo',
-    'Xbox Colombo',
-    'Nintendo Switch Sri Lanka',
-    'console repairs Colombo',
-    'HDMI port repair',
-    'controller drift fix',
-    'PS5 Sri Lanka',
+    'PlayStation repair Sri Lanka',
+    'PS5 repair Colombo',
+    'PS4 repair Colombo',
+    'HDMI port repair PlayStation',
+    'controller drift fix Colombo',
+    'PlayStation disc drive repair',
+    'console repair Sri Lanka',
+    'gaming store Colombo',
     SITE.name,
   ],
   applicationName: SITE.name,
@@ -77,10 +77,11 @@ const jsonLd = {
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.city,
+    ...(SITE.address.street ? { streetAddress: SITE.address.street } : {}),
+    ...(SITE.address.city ? { addressLocality: SITE.address.city } : {}),
     addressCountry: 'LK',
   },
+  ...(SITE.address.mapsUrl ? { hasMap: SITE.address.mapsUrl } : {}),
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -119,7 +120,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-black focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:font-medium focus:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bg"
         >
           Skip to content
         </a>

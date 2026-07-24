@@ -19,6 +19,13 @@ type Tile = {
 
 const TILES: Tile[] = [
   {
+    title: 'Repairs',
+    blurb: 'PlayStation & controller fixes by real technicians.',
+    href: '/repairs',
+    icon: Wrench,
+    featured: true,
+  },
+  {
     title: 'Consoles',
     blurb: 'PlayStation, Xbox, Nintendo & PC handhelds.',
     href: '/consoles',
@@ -36,13 +43,6 @@ const TILES: Tile[] = [
     href: '/accessories',
     icon: Headphones,
   },
-  {
-    title: 'Repairs',
-    blurb: 'Console + controller fixes by real technicians.',
-    href: '/repairs',
-    icon: Wrench,
-    featured: true,
-  },
 ];
 
 export default function CategoryTiles() {
@@ -53,11 +53,11 @@ export default function CategoryTiles() {
           What we do
         </h2>
         <p className="mt-3 text-muted max-w-lg">
-          Four things, done properly. Tap any tile to explore.
+          Repairs are our craft. Consoles, games and accessories are here too.
         </p>
       </FadeIn>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {TILES.map((tile, i) => {
           const Icon = tile.icon;
           const featured = tile.featured;
@@ -65,7 +65,7 @@ export default function CategoryTiles() {
             <FadeIn key={tile.href} onScroll delay={i * 0.05}>
               <Link
                 href={tile.href}
-                className={`group relative flex h-full flex-col rounded-2xl border p-6 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                className={`group relative flex h-full flex-col rounded-2xl border p-4 sm:p-6 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                   featured
                     ? 'border-accent/30 bg-surface/60 hover:border-accent/60 hover:shadow-glow hover:-translate-y-0.5'
                     : 'border-border/70 bg-surface/40 hover:border-border hover:bg-surface hover:-translate-y-0.5'

@@ -8,7 +8,7 @@ export default function ShowcaseHeader({
   return (
     <header>
       <p className="text-xs uppercase tracking-[0.22em] text-accent">
-        GameHub LK
+        PlayStation Repair Sri Lanka
       </p>
       <h1 className="mt-4 text-4xl sm:text-5xl font-display font-bold tracking-tight">
         {title}

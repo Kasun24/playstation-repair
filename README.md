@@ -1,18 +1,18 @@
-# GameHub LK — Gaming Store Showcase Site
+# PlayStation Repair Sri Lanka — Website
 
-A fast, static showcase website for a gaming store in Sri Lanka. Consoles, video games, accessories, and repairs — no e-commerce, no backend, just a clean marketing site with a WhatsApp-based inquiry flow.
+A fast, static marketing site for a specialist PlayStation repair business in Sri Lanka. Repairs are the focus; consoles, games, and accessories are secondary showcase sections. No e-commerce, no backend — just a clean site with a WhatsApp-based inquiry flow.
 
-> **Placeholder brand:** "GameHub LK" is a stand-in name until the real business identity is provided. All content lives in JSON files so it can be swapped in one place.
+> **Placeholder contact info:** WhatsApp, phone, email and address in `data/site.json` are still stand-in values. Swap them for the real details in one place when they arrive.
 
 ## Status
 
-Phase A — building the site with sample data. See [`docs/plan.md`](docs/plan.md) for the full build plan.
+Phase A — site built with sample data. See [`docs/plan.md`](docs/plan.md) for the full build plan.
 
 ## Tech stack
 
 - Next.js 14+ with `output: 'export'` (fully static)
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS (blue + yellow accent, dark theme)
 - `framer-motion` for subtle animations, `lucide-react` for icons
 
 No backend, no API routes, no server actions. The `out/` folder is deployable to plain Nginx.
@@ -25,15 +25,27 @@ npm run dev      # local dev at http://localhost:3000
 npm run build    # produces static out/
 ```
 
-## Project structure (planned)
+## Project structure
 
 ```
 app/                 Next.js app router pages
 components/          UI components
 data/                site.json, products.json, repairs.json, tiktok.json
-public/products/     Local placeholder images
+public/              logo.jpg + generated product placeholders
 docs/plan.md         Full build plan
 ```
+
+## Where to update brand content
+
+| What                    | File                                |
+| ----------------------- | ----------------------------------- |
+| Business name, contact  | `data/site.json`                    |
+| Logo image              | `public/logo.jpg`                   |
+| Favicon                 | `app/icon.svg`                      |
+| Repair services         | `data/repairs.json`                 |
+| Products (consoles etc.)| `data/products.json`                |
+| TikTok videos           | `data/tiktok.json`                  |
+| Theme colors            | `tailwind.config.ts`                |
 
 ## Roadmap
 

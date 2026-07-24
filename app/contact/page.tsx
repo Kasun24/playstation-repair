@@ -8,7 +8,7 @@ import { waLink } from '@/lib/whatsapp';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Reach GameHub LK on WhatsApp, phone, or email — or drop into our Colombo store.',
+    'Reach PlayStation Repair Sri Lanka on WhatsApp, phone, or email — or drop into our Colombo workshop.',
 };
 
 export default function ContactPage() {
@@ -32,10 +32,10 @@ export default function ContactPage() {
 
       <section className="border-y border-border/60 bg-surface/30">
         <div className="container-page py-14">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             <FadeIn onScroll>
               <a
-                href={waLink('Hi GameHub LK — I have a question.')}
+                href={waLink('Hi PlayStation Repair Sri Lanka — I have a question.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex h-full flex-col rounded-2xl border border-accent/30 bg-accent/5 p-5 transition-colors hover:border-accent/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
@@ -95,23 +95,28 @@ export default function ContactPage() {
             </FadeIn>
 
             <FadeIn onScroll delay={0.15}>
-              <div className="flex h-full flex-col rounded-2xl border border-border/70 bg-bg/40 p-5">
+              <a
+                href={SITE.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-full flex-col rounded-2xl border border-border/70 bg-bg/40 p-5 transition-colors hover:border-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
                 <MapPin
                   size={20}
                   strokeWidth={2.2}
                   className="text-text/70"
                   aria-hidden
                 />
-                <h2 className="mt-4 font-display font-semibold">Store</h2>
+                <h2 className="mt-4 font-display font-semibold">Workshop</h2>
                 <p className="mt-1 text-sm text-muted">
-                  {SITE.address.street}
-                  <br />
-                  {SITE.address.city}
+                  {[SITE.address.street, SITE.address.city]
+                    .filter(Boolean)
+                    .join(', ') || SITE.address.country}
                 </p>
-                <p className="mt-3 text-xs text-muted">
-                  {SITE.address.country}
+                <p className="mt-3 text-xs text-accent">
+                  Open in Google Maps →
                 </p>
-              </div>
+              </a>
             </FadeIn>
           </div>
 

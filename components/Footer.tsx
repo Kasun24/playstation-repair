@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="space-y-3">
           <Logo />
           <p className="text-sm text-muted max-w-xs">
-            Consoles. Games. Repairs. All in one place.
+            Specialist PlayStation repairs in Colombo. Consoles, games and accessories too.
           </p>
         </div>
         <div>
@@ -29,8 +29,8 @@ export default function Footer() {
       </div>
       <div className="border-t border-border/40">
         <div className="container-page py-4 flex flex-wrap items-center justify-between gap-2 text-xs text-muted">
-          <span>© {new Date().getFullYear()} GameHub LK. All rights reserved.</span>
-          <span>Colombo, Sri Lanka</span>
+          <span>© {new Date().getFullYear()} PlayStation Repair Sri Lanka. All rights reserved.</span>
+          <span>Sri Lanka</span>
         </div>
       </div>
     </footer>

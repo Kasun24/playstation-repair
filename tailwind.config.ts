@@ -15,8 +15,12 @@ const config: Config = {
         muted: '#9ca3af',
         text: '#f4f4f5',
         accent: {
-          DEFAULT: '#39ff14',
-          dim: '#22cc0e',
+          DEFAULT: '#3b82f6',
+          dim: '#2563eb',
+        },
+        highlight: {
+          DEFAULT: '#facc15',
+          dim: '#eab308',
         },
       },
       fontFamily: {
@@ -24,12 +28,12 @@ const config: Config = {
         display: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 0 30px rgba(57, 255, 20, 0.18)',
-        'glow-lg': '0 0 60px rgba(57, 255, 20, 0.25)',
+        glow: '0 0 30px rgba(59, 130, 246, 0.22)',
+        'glow-lg': '0 0 60px rgba(59, 130, 246, 0.3)',
       },
       backgroundImage: {
         'grid-fade':
-          'radial-gradient(circle at center, rgba(57,255,20,0.06), transparent 60%)',
+          'radial-gradient(circle at center, rgba(59,130,246,0.08), transparent 60%)',
       },
       keyframes: {
         shimmer: {

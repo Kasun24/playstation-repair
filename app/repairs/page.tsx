@@ -59,10 +59,10 @@ export default function RepairsPage() {
       <section className="container-page py-16 sm:py-20">
         <header>
           <p className="text-xs uppercase tracking-[0.22em] text-accent">
-            GameHub LK · Colombo
+            PlayStation Repair Sri Lanka
           </p>
           <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight max-w-3xl">
-            Console <span className="text-accent">repairs</span> done properly.
+            Broken today. <span className="text-accent">Back in the game</span> tomorrow.
           </h1>
           <p className="mt-4 max-w-2xl text-muted text-base sm:text-lg">
             HDMI ports, stick drift, disc drives, storage upgrades — real

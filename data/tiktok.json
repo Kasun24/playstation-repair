@@ -1,31 +1,25 @@
 {
-  "profileUrl": "https://www.tiktok.com/@gamehublk",
-  "handle": "@gamehublk",
-  "_note": "Placeholder video IDs from popular public gaming accounts. Verify each embed still renders during Step 8; swap for the real business's videos when provided.",
+  "profileUrl": "https://www.tiktok.com/@playstation.repair",
+  "handle": "@playstation.repair",
+  "_note": "Add more videos by pasting a full https://www.tiktok.com/@playstation.repair/video/<id> URL — extract the numeric id and drop into the videos array below.",
   "videos": [
     {
-      "id": "7233421245234421035",
-      "username": "playstation",
-      "url": "https://www.tiktok.com/@playstation/video/7233421245234421035",
-      "caption": "PS5 highlight reel"
+      "id": "7592271392280710408",
+      "username": "playstation.repair",
+      "url": "https://www.tiktok.com/@playstation.repair/video/7592271392280710408",
+      "caption": "PS5 service — liquid metal & thermal putty replacement"
     },
     {
-      "id": "7176038929920036101",
-      "username": "xbox",
-      "url": "https://www.tiktok.com/@xbox/video/7176038929920036101",
-      "caption": "Xbox Series X gameplay"
+      "id": "7590998631415549192",
+      "username": "playstation.repair",
+      "url": "https://www.tiktok.com/@playstation.repair/video/7590998631415549192",
+      "caption": "PS5 controller repair"
     },
     {
-      "id": "7145834820218473771",
-      "username": "nintendoamerica",
-      "url": "https://www.tiktok.com/@nintendoamerica/video/7145834820218473771",
-      "caption": "Nintendo Switch moments"
-    },
-    {
-      "id": "7280614382143507755",
-      "username": "playstation",
-      "url": "https://www.tiktok.com/@playstation/video/7280614382143507755",
-      "caption": "New releases showcase"
+      "id": "7369575169678953736",
+      "username": "playstation.repair",
+      "url": "https://www.tiktok.com/@playstation.repair/video/7369575169678953736",
+      "caption": "PS4 controller repair"
     }
   ]
 }

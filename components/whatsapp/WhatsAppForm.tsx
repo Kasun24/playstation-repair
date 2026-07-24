@@ -136,7 +136,7 @@ export default function WhatsAppForm({
         <div className="pt-2">
           <button
             type="submit"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-black transition-colors hover:bg-accent-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-white transition-colors hover:bg-accent-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             <MessageCircle size={18} strokeWidth={2.4} aria-hidden />
             {submitLabel}

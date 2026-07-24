@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, MoveRight } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import TikTokEmbed from '@/components/home/TikTokEmbed';
 import { TIKTOK } from '@/lib/data';
 
 export default function TikTokSection() {
+  const hasMultiple = TIKTOK.videos.length > 1;
   return (
     <section className="container-page py-16 sm:py-24">
       <FadeIn onScroll>
@@ -31,11 +32,26 @@ export default function TikTokSection() {
       </FadeIn>
 
       <FadeIn onScroll delay={0.1}>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div
+          className="mt-10 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
+          role="region"
+          aria-label="TikTok videos"
+        >
           {TIKTOK.videos.map((v) => (
-            <TikTokEmbed key={v.id} video={v} />
+            <div
+              key={v.id}
+              className="w-[85%] shrink-0 snap-start sm:w-[55%] md:w-[45%] lg:w-auto lg:shrink"
+            >
+              <TikTokEmbed video={v} />
+            </div>
           ))}
         </div>
+        {hasMultiple && (
+          <p className="mt-3 flex items-center justify-center gap-1.5 text-xs text-muted lg:hidden">
+            Swipe to see more
+            <MoveRight size={14} aria-hidden />
+          </p>
+        )}
       </FadeIn>
     </section>
   );

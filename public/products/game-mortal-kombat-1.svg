@@ -17,5 +17,5 @@
   <rect x="60" y="60" rx="6" ry="6" width="72" height="30" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.18)"/>
   <text x="96" y="80" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600" font-size="13" fill="#e2e8f0" letter-spacing="2">GAME</text>
   <text x="60" y="544" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="700" font-size="56" fill="#f8fafc">Mortal Kombat 1</text>
-  <rect x="60" y="558" width="80" height="4" fill="#39ff14"/>
+  <rect x="60" y="558" width="80" height="4" fill="#3b82f6"/>
 </svg>

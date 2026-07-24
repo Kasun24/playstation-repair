@@ -51,7 +51,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container-page flex items-center justify-between h-16">
-        <Link href="/" aria-label="GameHub LK home" className="focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md">
+        <Link href="/" aria-label="PlayStation Repair Sri Lanka — home" className="focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md">
           <Logo />
         </Link>
 

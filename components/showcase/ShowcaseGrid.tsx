@@ -133,7 +133,7 @@ function FilterChip({
       aria-pressed={active}
       className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
         active
-          ? 'border-accent bg-accent text-black'
+          ? 'border-accent bg-accent text-white'
           : 'border-border/70 bg-surface/40 text-text/80 hover:border-border hover:text-text'
       }`}
     >

@@ -21,7 +21,7 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-black transition-colors hover:bg-accent-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-white transition-colors hover:bg-accent-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
         >
           <ArrowLeft size={18} strokeWidth={2.4} aria-hidden />
           Back to home

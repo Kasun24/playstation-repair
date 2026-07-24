@@ -44,7 +44,7 @@ const FIELDS: Field[] = [
 
 const buildMessage = (v: Record<string, string>) =>
   [
-    'Hi GameHub LK,',
+    'Hi PlayStation Repair Sri Lanka,',
     '',
     `Name: ${v.name?.trim() || '—'}`,
     `Topic: ${v.topic || '—'}`,

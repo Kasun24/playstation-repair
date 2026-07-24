@@ -24,7 +24,7 @@ const PALETTES = [
   ['#1a1305', '#eab308'],
 ];
 
-const ACCENT = '#39ff14';
+const ACCENT = '#3b82f6';
 
 const hash = (str) => {
   let h = 0;
