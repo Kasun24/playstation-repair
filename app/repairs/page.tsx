@@ -17,7 +17,7 @@ import { REPAIRS } from '@/lib/data';
 export const metadata: Metadata = {
   title: 'Repairs',
   description:
-    'PlayStation, Xbox, and Nintendo console repairs in Colombo — HDMI ports, controller drift, cleaning, disc drive, storage upgrades.',
+    'PlayStation, Xbox, and Nintendo console repairs in Sri Lanka — HDMI ports, controller drift, cleaning, disc drive, storage upgrades.',
 };
 
 const ICON_MAP: Record<string, LucideIcon> = {

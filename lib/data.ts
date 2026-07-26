@@ -2,6 +2,7 @@ import siteJson from '@/data/site.json';
 import productsJson from '@/data/products.json';
 import repairsJson from '@/data/repairs.json';
 import tiktokJson from '@/data/tiktok.json';
+import testimonialsJson from '@/data/testimonials.json';
 
 export type Category = 'consoles' | 'games' | 'accessories';
 export type Condition = 'new' | 'pre-owned';
@@ -32,8 +33,24 @@ export type TikTokVideo = {
   caption?: string;
 };
 
+export type Testimonial = {
+  id: string;
+  name: string;
+  initials: string;
+  location: string;
+  service: string;
+  quote: string;
+  rating: number;
+};
+
 export const SITE = siteJson;
 export const SITE_URL = siteJson.siteUrl;
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
+/** Prefix a public/ asset with the deploy basePath (needed for plain <img> / <link> tags on GH Pages subpaths). */
+export const asset = (path: string): string =>
+  path.startsWith('/') ? `${BASE_PATH}${path}` : path;
 export const PRODUCTS: Product[] = productsJson.products as Product[];
 export const REPAIRS: Repair[] = repairsJson.repairs as Repair[];
 export const TIKTOK = tiktokJson as {
@@ -41,6 +58,8 @@ export const TIKTOK = tiktokJson as {
   handle: string;
   videos: TikTokVideo[];
 };
+export const TESTIMONIALS: Testimonial[] =
+  testimonialsJson.testimonials as Testimonial[];
 
 export const productsByCategory = (category: Category): Product[] =>
   PRODUCTS.filter((p) => p.category === category);

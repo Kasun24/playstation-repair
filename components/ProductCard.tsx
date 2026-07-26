@@ -1,4 +1,4 @@
-import type { Product } from '@/lib/data';
+import { asset, type Product } from '@/lib/data';
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -6,7 +6,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="relative aspect-[4/3] overflow-hidden border-b border-border/60">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={product.image}
+          src={asset(product.image)}
           alt={product.name}
           loading="lazy"
           width={800}

@@ -8,7 +8,7 @@ import { waLink } from '@/lib/whatsapp';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Reach PlayStation Repair Sri Lanka on WhatsApp, phone, or email — or drop into our Colombo workshop.',
+    'Reach PlayStation Repair Sri Lanka on WhatsApp, phone, or email — or drop into our workshop.',
 };
 
 export default function ContactPage() {

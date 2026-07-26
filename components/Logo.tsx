@@ -1,11 +1,11 @@
-import { SITE } from '@/lib/data';
+import { SITE, asset } from '@/lib/data';
 
 export default function Logo() {
   return (
     <span className="flex items-center gap-2.5 font-display font-bold">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/logo.jpg"
+        src={asset('/logo.jpg')}
         alt=""
         aria-hidden
         width={36}

@@ -24,7 +24,7 @@ const ITEMS: Item[] = [
   },
   {
     icon: MapPin,
-    title: 'Right here in Colombo',
+    title: 'Right here in Sri Lanka',
     blurb:
       'Drop by, or chat first on WhatsApp — pickup and delivery can be arranged.',
   },
