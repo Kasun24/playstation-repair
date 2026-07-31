@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="space-y-3">
           <Logo />
           <p className="text-sm text-muted max-w-xs">
-            Specialist PlayStation repairs in Sri Lanka. Consoles, games and accessories too.
+            Specialist PlayStation &amp; Xbox repairs in Sri Lanka. Consoles, games and accessories too.
           </p>
         </div>
         <div>

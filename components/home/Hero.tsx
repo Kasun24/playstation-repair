@@ -24,7 +24,7 @@ export default function Hero() {
 
         <FadeIn delay={0.08}>
           <h1 className="mt-5 text-4xl sm:text-6xl md:text-7xl font-display font-bold leading-[1.02] tracking-tight max-w-4xl">
-            PlayStation repairs.
+            PlayStation &amp; Xbox repairs.
             <br />
             Back in the{' '}
             <span className="text-highlight drop-shadow-[0_0_28px_rgba(250,204,21,0.45)]">

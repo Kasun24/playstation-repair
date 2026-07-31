@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
-const DEFAULT_TITLE = `${SITE.name} — PlayStation Repairs, Consoles & Games`;
+const DEFAULT_TITLE = `${SITE.name} — PlayStation & Xbox Repairs, Consoles & Games`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -29,11 +29,17 @@ export const metadata: Metadata = {
   description: SITE.description,
   keywords: [
     'PlayStation repair Sri Lanka',
+    'Xbox repair Sri Lanka',
     'PS5 repair Sri Lanka',
     'PS4 repair Sri Lanka',
+    'Xbox Series X repair Sri Lanka',
+    'Xbox Series S repair Sri Lanka',
+    'Xbox One repair Sri Lanka',
     'HDMI port repair PlayStation',
+    'HDMI port repair Xbox',
     'controller drift fix Sri Lanka',
     'PlayStation disc drive repair',
+    'Xbox disc drive repair',
     'console repair Sri Lanka',
     'gaming store Sri Lanka',
     SITE.name,

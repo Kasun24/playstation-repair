@@ -15,9 +15,9 @@ import RepairForm from '@/components/whatsapp/RepairForm';
 import { REPAIRS } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Repairs',
+  title: 'PlayStation & Xbox Repairs',
   description:
-    'PlayStation, Xbox, and Nintendo console repairs in Sri Lanka — HDMI ports, controller drift, cleaning, disc drive, storage upgrades.',
+    'PlayStation and Xbox console repairs in Sri Lanka — HDMI ports, controller drift, cleaning, disc drive, storage upgrades. Nintendo Switch too.',
 };
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -65,9 +65,9 @@ export default function RepairsPage() {
             Broken today. <span className="text-accent">Back in the game</span> tomorrow.
           </h1>
           <p className="mt-4 max-w-2xl text-muted text-base sm:text-lg">
-            HDMI ports, stick drift, disc drives, storage upgrades — real
-            technicians, honest pricing, and free diagnostics before we touch a
-            screwdriver.
+            PlayStation and Xbox — HDMI ports, stick drift, disc drives, storage
+            upgrades. Real technicians, honest pricing, and free diagnostics
+            before we touch a screwdriver.
           </p>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">

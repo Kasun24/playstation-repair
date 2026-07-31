@@ -20,7 +20,7 @@ type Tile = {
 const TILES: Tile[] = [
   {
     title: 'Repairs',
-    blurb: 'PlayStation & controller fixes by real technicians.',
+    blurb: 'PlayStation, Xbox & controller fixes by real technicians.',
     href: '/repairs',
     icon: Wrench,
     featured: true,
