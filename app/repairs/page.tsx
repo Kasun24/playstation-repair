@@ -56,20 +56,21 @@ const STEPS = [
 export default function RepairsPage() {
   return (
     <>
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-12 sm:py-20">
         <header>
-          <p className="text-xs uppercase tracking-[0.22em] text-accent">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.22em] text-accent">
             PlayStation Repair Sri Lanka
           </p>
-          <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight max-w-3xl">
-            Broken today. <span className="text-accent">Back in the game</span> tomorrow.
+          <h1 className="mt-3 sm:mt-4 text-[2rem] leading-[1.08] sm:text-5xl sm:leading-[1.05] md:text-6xl font-display font-bold tracking-tight max-w-3xl [text-wrap:balance]">
+            Broken today.{' '}
+            <span className="text-accent">Back in the game</span> tomorrow.
           </h1>
-          <p className="mt-4 max-w-2xl text-muted text-base sm:text-lg">
+          <p className="mt-4 max-w-2xl text-[15px] sm:text-lg text-muted">
             PlayStation and Xbox — HDMI ports, stick drift, disc drives, storage
             upgrades. Real technicians, honest pricing, and free diagnostics
             before we touch a screwdriver.
           </p>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+          <ul className="mt-7 sm:mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">
               <span
                 className="h-1.5 w-1.5 rounded-full bg-accent"
@@ -96,16 +97,16 @@ export default function RepairsPage() {
       </section>
 
       <section className="border-y border-border/60 bg-surface/30">
-        <div className="container-page py-16">
+        <div className="container-page py-12 sm:py-16">
           <FadeIn onScroll>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
               How it works
             </h2>
-            <p className="mt-3 text-muted max-w-lg">
+            <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
               Three steps between broken and fixed.
             </p>
           </FadeIn>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 md:grid-cols-3">
             {STEPS.map((step, i) => {
               const Icon = step.icon;
               return (
@@ -134,17 +135,17 @@ export default function RepairsPage() {
         </div>
       </section>
 
-      <section className="container-page py-16">
+      <section className="container-page py-12 sm:py-16">
         <FadeIn onScroll>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
             What we fix
           </h2>
-          <p className="mt-3 text-muted max-w-lg">
+          <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
             The common repairs we handle every week. Not on the list? Message
             us — we probably still can.
           </p>
         </FadeIn>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 sm:mt-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {REPAIRS.map((r, i) => {
             const Icon = ICON_MAP[r.icon] ?? Wrench;
             return (
@@ -171,18 +172,18 @@ export default function RepairsPage() {
         id="book"
         className="border-t border-border/60 bg-surface/30"
       >
-        <div className="container-page py-16 sm:py-20">
+        <div className="container-page py-12 sm:py-20">
           <FadeIn onScroll>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
               Book a repair
             </h2>
-            <p className="mt-3 text-muted max-w-xl">
+            <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
               Fill this in — we’ll pick up the conversation on WhatsApp. Your
               message stays visible on the right so you can double-check
               before sending.
             </p>
           </FadeIn>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <RepairForm />
           </div>
         </div>

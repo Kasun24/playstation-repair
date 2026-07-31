@@ -20,7 +20,7 @@ type Tile = {
 const TILES: Tile[] = [
   {
     title: 'Repairs',
-    blurb: 'PlayStation, Xbox & controller fixes by real technicians.',
+    blurb: 'PlayStation, Xbox & controller repairs.',
     href: '/repairs',
     icon: Wrench,
     featured: true,
@@ -47,17 +47,17 @@ const TILES: Tile[] = [
 
 export default function CategoryTiles() {
   return (
-    <section className="container-page py-16 sm:py-24">
+    <section className="container-page py-12 sm:py-24">
       <FadeIn onScroll>
-        <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
           What we do
         </h2>
-        <p className="mt-3 text-muted max-w-lg">
+        <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
           Repairs are our craft. Consoles, games and accessories are here too.
         </p>
       </FadeIn>
 
-      <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {TILES.map((tile, i) => {
           const Icon = tile.icon;
           const featured = tile.featured;

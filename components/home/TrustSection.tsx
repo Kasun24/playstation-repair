@@ -33,17 +33,17 @@ const ITEMS: Item[] = [
 export default function TrustSection() {
   return (
     <section className="border-y border-border/60 bg-surface/30">
-      <div className="container-page py-16 sm:py-20">
+      <div className="container-page py-12 sm:py-20">
         <FadeIn onScroll>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
             Why us
           </h2>
-          <p className="mt-3 text-muted max-w-lg">
+          <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
             Simple promises we hold ourselves to.
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
           {ITEMS.map((item, i) => {
             const Icon = item.icon;
             return (

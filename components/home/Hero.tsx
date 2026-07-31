@@ -15,33 +15,34 @@ export default function Hero() {
         <div className="absolute left-[70%] top-40 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-highlight/10 blur-3xl" />
       </div>
 
-      <div className="container-page pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <div className="container-page pt-10 pb-14 sm:pt-24 sm:pb-28">
         <FadeIn>
-          <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-accent font-medium">
+          <p className="text-[11px] sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.22em] text-accent font-medium">
             {SITE.name}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <h1 className="mt-5 text-4xl sm:text-6xl md:text-7xl font-display font-bold leading-[1.02] tracking-tight max-w-4xl">
-            PlayStation &amp; Xbox repairs.
-            <br />
-            Back in the{' '}
-            <span className="text-highlight drop-shadow-[0_0_28px_rgba(250,204,21,0.45)]">
-              game
+          <h1 className="mt-4 sm:mt-5 text-[2rem] leading-[1.08] sm:text-6xl sm:leading-[1.02] md:text-7xl font-display font-bold tracking-tight max-w-4xl [text-wrap:balance]">
+            <span className="block">PlayStation &amp; Xbox repairs.</span>
+            <span className="block">
+              Back in the{' '}
+              <span className="text-highlight drop-shadow-[0_0_28px_rgba(250,204,21,0.45)]">
+                game
+              </span>
+              . Fast.
             </span>
-            . Fast.
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.16}>
-          <p className="mt-6 text-base sm:text-lg text-muted max-w-2xl">
+          <p className="mt-5 sm:mt-6 text-[15px] sm:text-lg text-muted max-w-2xl">
             {SITE.description}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.24}>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-7 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href={waLink('Hi PlayStation Repair Sri Lanka — I need a repair.')}
               target="_blank"
@@ -62,7 +63,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.32}>
-          <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+          <ul className="mt-8 sm:mt-10 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
               Free diagnostics

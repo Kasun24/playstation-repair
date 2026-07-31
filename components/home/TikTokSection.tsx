@@ -7,14 +7,14 @@ import { TIKTOK } from '@/lib/data';
 export default function TikTokSection() {
   const hasMultiple = TIKTOK.videos.length > 1;
   return (
-    <section className="container-page py-16 sm:py-24">
+    <section className="container-page py-12 sm:py-24">
       <FadeIn onScroll>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
               Follow us on TikTok
             </h2>
-            <p className="mt-3 text-muted max-w-lg">
+            <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
               Unboxings, repair timelapses, and new arrivals — every week on{' '}
               {TIKTOK.handle}.
             </p>
@@ -33,7 +33,7 @@ export default function TikTokSection() {
 
       <FadeIn onScroll delay={0.1}>
         <div
-          className="mt-10 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
+          className="mt-8 sm:mt-10 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
           role="region"
           aria-label="TikTok videos"
         >

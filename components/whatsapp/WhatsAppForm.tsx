@@ -66,7 +66,7 @@ export default function WhatsAppForm({
           const invalid = touched[field.name] && isMissing(field);
           const id = `waf-${field.name}`;
           const shared =
-            'mt-1.5 block w-full rounded-lg border bg-surface/40 px-3 py-2 text-sm text-text placeholder:text-muted focus:outline-none focus:ring-2';
+            'mt-1.5 block w-full rounded-lg border bg-surface/40 px-3 py-2.5 text-base text-text placeholder:text-muted focus:outline-none focus:ring-2 sm:py-2 sm:text-sm';
           const state = invalid
             ? 'border-red-500/60 focus:ring-red-500/40'
             : 'border-border/70 focus:border-accent/60 focus:ring-accent/40';

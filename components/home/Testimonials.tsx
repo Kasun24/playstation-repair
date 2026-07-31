@@ -1,17 +1,17 @@
-import { Quote, Star } from 'lucide-react';
+import { MoveRight, Quote, Star } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import { TESTIMONIALS } from '@/lib/data';
 
 export default function Testimonials() {
   return (
-    <section className="container-page py-16 sm:py-24">
+    <section className="container-page py-12 sm:py-24">
       <FadeIn onScroll>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
               Fixed and happy
             </h2>
-            <p className="mt-3 text-muted max-w-lg">
+            <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
               A few recent words from the workbench. Real reviews, real repairs.
             </p>
           </div>
@@ -23,7 +23,7 @@ export default function Testimonials() {
       </FadeIn>
 
       <div
-        className="mt-10 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
+        className="mt-8 sm:mt-10 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0"
         role="region"
         aria-label="Customer testimonials"
       >
@@ -78,6 +78,12 @@ export default function Testimonials() {
           </FadeIn>
         ))}
       </div>
+      {TESTIMONIALS.length > 1 && (
+        <p className="mt-2 flex items-center justify-center gap-1.5 text-xs text-muted lg:hidden">
+          Swipe to see more
+          <MoveRight size={14} aria-hidden />
+        </p>
+      )}
     </section>
   );
 }

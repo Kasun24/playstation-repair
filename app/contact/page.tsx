@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-12 sm:py-20">
         <header>
-          <p className="text-xs uppercase tracking-[0.22em] text-accent">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.22em] text-accent">
             Say hi
           </p>
-          <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight max-w-3xl">
+          <h1 className="mt-3 sm:mt-4 text-[2rem] leading-[1.08] sm:text-5xl sm:leading-[1.05] md:text-6xl font-display font-bold tracking-tight max-w-3xl [text-wrap:balance]">
             Let’s <span className="text-accent">talk</span>.
           </h1>
-          <p className="mt-4 max-w-2xl text-muted text-base sm:text-lg">
+          <p className="mt-4 max-w-2xl text-[15px] sm:text-lg text-muted">
             Questions about stock, a repair, or a trade-in? WhatsApp is the
             fastest way to reach us — the form below just opens a chat with
             your message pre-filled.
@@ -31,7 +31,7 @@ export default function ContactPage() {
       </section>
 
       <section className="border-y border-border/60 bg-surface/30">
-        <div className="container-page py-14">
+        <div className="container-page py-10 sm:py-14">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             <FadeIn onScroll>
               <a
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   aria-hidden
                 />
                 <h2 className="mt-4 font-display font-semibold">Email</h2>
-                <p className="mt-1 text-sm text-muted">{SITE.email}</p>
+                <p className="mt-1 text-sm text-muted break-all">{SITE.email}</p>
                 <p className="mt-3 text-xs text-muted">
                   Replies within a day
                 </p>
@@ -142,17 +142,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="container-page py-16 sm:py-20">
+      <section className="container-page py-12 sm:py-20">
         <FadeIn onScroll>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
             Send us a message
           </h2>
-          <p className="mt-3 text-muted max-w-xl">
+          <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
             Fill this in — we’ll pick up the conversation on WhatsApp. Preview
             on the right updates as you type.
           </p>
         </FadeIn>
-        <div className="mt-10">
+        <div className="mt-8 sm:mt-10">
           <ContactForm />
         </div>
       </section>

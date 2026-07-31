@@ -54,7 +54,7 @@ export default function ShowcaseGrid({ products, placeholder }: Props) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={placeholder}
-            className="w-full rounded-lg border border-border/70 bg-surface/40 py-3 pl-11 pr-4 text-sm text-text placeholder:text-muted focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/40"
+            className="w-full rounded-lg border border-border/70 bg-surface/40 py-3 pl-11 pr-4 text-base text-text placeholder:text-muted focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/40 sm:text-sm"
           />
         </label>
 
