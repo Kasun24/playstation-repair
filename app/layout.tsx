@@ -113,9 +113,10 @@ const jsonLd = {
     },
   ],
   sameAs: [
-    SITE.socials.tiktok,
-    SITE.socials.instagram,
-    SITE.socials.facebook,
+    SITE.socials.playstation.tiktok,
+    SITE.socials.playstation.facebook,
+    SITE.socials.xbox.tiktok,
+    SITE.socials.xbox.facebook,
   ],
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/whatsapp/ContactForm';
+import { SocialTiles } from '@/components/SocialLinks';
 import { SITE } from '@/lib/data';
 import { waLink } from '@/lib/whatsapp';
 
@@ -143,6 +144,21 @@ export default function ContactPage() {
       </section>
 
       <section className="container-page py-12 sm:py-20">
+        <FadeIn onScroll>
+          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
+            Follow us
+          </h2>
+          <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
+            Separate accounts for PlayStation and Xbox work — repair
+            timelapses, before/afters, and shop updates.
+          </p>
+        </FadeIn>
+        <div className="mt-8 sm:mt-10">
+          <SocialTiles />
+        </div>
+      </section>
+
+      <section className="container-page py-12 sm:py-20 border-t border-border/60">
         <FadeIn onScroll>
           <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
             Send us a message

@@ -9,20 +9,24 @@
   "phone": "+94 11 234 5678",
   "email": "hello@playstationrepair.lk",
   "address": {
-    "street": "",
-    "city": "",
+    "street": "436/D, Sooriyapaluwa Road, Ranmuthugala",
+    "city": "Kadawatha",
     "country": "Sri Lanka",
-    "mapsUrl": "https://maps.app.goo.gl/mu1A8Svk6kQnp2yd7",
-    "_note": "Street/city still to be confirmed by owner. Coordinates from Maps URL: 7.0200696, 79.9707934 (roughly Kiribathgoda/Kelaniya area, north of Colombo)."
+    "mapsUrl": "https://share.google/6GB7SNDKox5u5auS1"
   },
   "hours": [
     { "days": "Mon – Sat", "time": "10:00 – 20:00" },
     { "days": "Sun", "time": "12:00 – 18:00" }
   ],
   "socials": {
-    "tiktok": "https://www.tiktok.com/@playstationrepairlk",
-    "instagram": "https://www.instagram.com/playstationrepairlk",
-    "facebook": "https://www.facebook.com/playstationrepairlk"
+    "playstation": {
+      "tiktok": "https://www.tiktok.com/@playstation.repair",
+      "facebook": "https://www.facebook.com/share/1AWLGcfpMq/"
+    },
+    "xbox": {
+      "tiktok": "https://www.tiktok.com/@xbox.repair.srila",
+      "facebook": "https://www.facebook.com/share/1NcV6uR7dQ/"
+    }
   },
-  "_note": "Contact details (WhatsApp, phone, email, address) are still placeholders. Update this file when the real business info is provided."
+  "_note": "WhatsApp, phone, email and hours are still placeholders — replace when the owner provides them. Address and socials are the real business details (confirmed 2026-08-01)."
 }
