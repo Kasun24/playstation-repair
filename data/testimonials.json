@@ -1,32 +1,4 @@
 {
-  "_note": "PLACEHOLDER testimonials — replace with real customer reviews before promoting the site publicly. Keep the same shape (name, initials, location, service, quote, rating).",
-  "testimonials": [
-    {
-      "id": "t1",
-      "name": "Dinesh P.",
-      "initials": "DP",
-      "location": "Nugegoda",
-      "service": "PS5 HDMI port repair",
-      "quote": "My PS5 wouldn't display anything. Sent them a photo on WhatsApp, they explained the HDMI IC needed replacing, and I had it back in three days for a fair price. Working perfectly since.",
-      "rating": 5
-    },
-    {
-      "id": "t2",
-      "name": "Sanjaya R.",
-      "initials": "SR",
-      "location": "Kandy",
-      "service": "DualSense stick drift fix",
-      "quote": "Two controllers with drift, both fixed same day. Cheaper than buying one new controller and they even cleaned the shells. Straightforward, no upselling.",
-      "rating": 5
-    },
-    {
-      "id": "t3",
-      "name": "Nadeesha F.",
-      "initials": "NF",
-      "location": "Colombo",
-      "service": "PS4 cleaning + thermal paste",
-      "quote": "My old PS4 Pro sounded like a jet engine. They cleaned it, replaced the thermal paste, and now it's whisper quiet again. Free diagnosis was the deciding factor.",
-      "rating": 5
-    }
-  ]
+  "_note": "Add real customer reviews here. Each entry: id, name, initials, location, service, quote, rating (1–5). While empty, the 'Fixed and happy' section is hidden on the home page.",
+  "testimonials": []
 }

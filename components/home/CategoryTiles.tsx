@@ -33,7 +33,7 @@ const TILES: Tile[] = [
   },
   {
     title: 'Video Games',
-    blurb: 'Latest AAA hits and classic favourites.',
+    blurb: 'A selection across platforms and genres.',
     href: '/games',
     icon: Disc3,
   },

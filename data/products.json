@@ -1,4 +1,5 @@
 {
+  "_note": "Sample catalog for the /consoles, /games and /accessories showcase pages. Descriptions are generic product blurbs, not stock claims. Edit or empty as the shop's actual inventory changes.",
   "products": [
     {
       "id": "console-ps5-slim",

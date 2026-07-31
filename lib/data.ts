@@ -70,17 +70,17 @@ export const CATEGORY_META: Record<
 > = {
   consoles: {
     title: 'Consoles',
-    blurb: 'New and pre-owned — PlayStation, Xbox, Nintendo, and PC handhelds.',
+    blurb: 'PlayStation, Xbox, Nintendo and PC handhelds.',
     href: '/consoles',
   },
   games: {
     title: 'Video Games',
-    blurb: 'The latest AAA hits and timeless classics across every platform.',
+    blurb: 'A selection across platforms and genres.',
     href: '/games',
   },
   accessories: {
     title: 'Accessories',
-    blurb: 'Controllers, headsets, charging, storage — everything to level up your setup.',
+    blurb: 'Controllers, headsets, charging and storage.',
     href: '/accessories',
   },
 };

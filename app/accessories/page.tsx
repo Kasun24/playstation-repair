@@ -6,7 +6,7 @@ import ShowcaseGrid from '@/components/showcase/ShowcaseGrid';
 export const metadata: Metadata = {
   title: 'Accessories',
   description:
-    'Controllers, headsets, charging docks, cooling stands, storage, and more — from PlayStation Repair Sri Lanka.',
+    'Controllers, headsets, charging, cooling and storage — from PlayStation Repair Sri Lanka.',
 };
 
 export default function AccessoriesPage() {

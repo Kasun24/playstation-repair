@@ -3,6 +3,7 @@ import FadeIn from '@/components/FadeIn';
 import { TESTIMONIALS } from '@/lib/data';
 
 export default function Testimonials() {
+  if (TESTIMONIALS.length === 0) return null;
   return (
     <section className="container-page py-12 sm:py-24">
       <FadeIn onScroll>

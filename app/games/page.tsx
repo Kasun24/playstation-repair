@@ -6,7 +6,7 @@ import ShowcaseGrid from '@/components/showcase/ShowcaseGrid';
 export const metadata: Metadata = {
   title: 'Video Games',
   description:
-    'The latest AAA game releases and timeless classics across PlayStation, Xbox, Nintendo, and more.',
+    'A selection of video games across PlayStation, Xbox, Nintendo and more.',
 };
 
 export default function GamesPage() {

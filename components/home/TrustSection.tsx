@@ -1,32 +1,28 @@
-import { BadgeCheck, MapPin, Wallet, Zap, type LucideIcon } from 'lucide-react';
+import { MapPin, MessageCircle, Wallet, Wrench, type LucideIcon } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 
 type Item = { icon: LucideIcon; title: string; blurb: string };
 
 const ITEMS: Item[] = [
   {
-    icon: BadgeCheck,
-    title: 'Genuine gear only',
-    blurb:
-      'Every console and accessory tested end-to-end before it reaches you.',
-  },
-  {
-    icon: Zap,
-    title: 'Fast turnaround',
-    blurb:
-      'Stick drift and storage upgrades most often same-day; deeper repairs in a few days.',
+    icon: Wrench,
+    title: 'Repair-first',
+    blurb: 'PlayStation and Xbox repairs are our daily work.',
   },
   {
     icon: Wallet,
-    title: 'Fair pricing',
-    blurb:
-      'No surprise fees. Free diagnostics — we tell you upfront what a fix costs.',
+    title: 'Clear quotes',
+    blurb: 'We diagnose the fault and share the cost before starting.',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Easy to reach',
+    blurb: 'WhatsApp is the quickest way to describe the fault and book a slot.',
   },
   {
     icon: MapPin,
-    title: 'Right here in Sri Lanka',
-    blurb:
-      'Drop by, or chat first on WhatsApp — pickup and delivery can be arranged.',
+    title: 'Sri Lanka based',
+    blurb: 'Drop by or arrange it over WhatsApp — whichever works for you.',
   },
 ];
 

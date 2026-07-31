@@ -15,8 +15,7 @@ export default function TikTokSection() {
               Follow us on TikTok
             </h2>
             <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
-              Unboxings, repair timelapses, and new arrivals — every week on{' '}
-              {TIKTOK.handle}.
+              Repair timelapses and workshop moments over on {TIKTOK.handle}.
             </p>
           </div>
           <Link

@@ -63,12 +63,11 @@ export default function RepairsPage() {
           </p>
           <h1 className="mt-3 sm:mt-4 text-[2rem] leading-[1.08] sm:text-5xl sm:leading-[1.05] md:text-6xl font-display font-bold tracking-tight max-w-3xl [text-wrap:balance]">
             Broken today.{' '}
-            <span className="text-accent">Back in the game</span> tomorrow.
+            <span className="text-accent">Back in the game</span>.
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] sm:text-lg text-muted">
             PlayStation and Xbox — HDMI ports, stick drift, disc drives, storage
-            upgrades. Real technicians, honest pricing, and free diagnostics
-            before we touch a screwdriver.
+            upgrades. Real technicians and honest quotes before we start.
           </p>
           <ul className="mt-7 sm:mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">
@@ -76,21 +75,21 @@ export default function RepairsPage() {
                 className="h-1.5 w-1.5 rounded-full bg-accent"
                 aria-hidden
               />
-              Free diagnostics
+              PlayStation &amp; Xbox specialists
             </li>
             <li className="flex items-center gap-2">
               <span
                 className="h-1.5 w-1.5 rounded-full bg-accent"
                 aria-hidden
               />
-              Fixed-price quotes upfront
+              Diagnosis before quote
             </li>
             <li className="flex items-center gap-2">
               <span
                 className="h-1.5 w-1.5 rounded-full bg-accent"
                 aria-hidden
               />
-              WhatsApp updates as we work
+              WhatsApp to get started
             </li>
           </ul>
         </header>

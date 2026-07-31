@@ -66,15 +66,15 @@ export default function Hero() {
           <ul className="mt-8 sm:mt-10 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-              Free diagnostics
+              PlayStation &amp; Xbox specialists
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-              Same-day fixes on many faults
+              Diagnosis before quote
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-              WhatsApp support 7 days a week
+              WhatsApp to get started
             </li>
           </ul>
         </FadeIn>

@@ -6,7 +6,7 @@ import ShowcaseGrid from '@/components/showcase/ShowcaseGrid';
 export const metadata: Metadata = {
   title: 'Consoles',
   description:
-    'New and pre-owned gaming consoles — PlayStation, Xbox, Nintendo, and PC handhelds. From PlayStation Repair Sri Lanka.',
+    'Gaming consoles — PlayStation, Xbox, Nintendo and PC handhelds. From PlayStation Repair Sri Lanka.',
 };
 
 export default function ConsolesPage() {
