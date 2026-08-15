@@ -12,11 +12,9 @@ export default function Logo() {
         height={36}
         className="h-9 w-9 rounded-md object-cover ring-1 ring-border/60"
       />
-      <span className="flex flex-col leading-tight tracking-tight">
-        <span className="text-[13px] sm:text-sm text-text/90">PlayStation</span>
-        <span className="text-[11px] sm:text-xs text-highlight -mt-0.5">
-          Repair <span className="text-text/70">· Sri Lanka</span>
-        </span>
+      <span className="whitespace-nowrap text-[15px] sm:text-base leading-none tracking-tight text-text">
+        PlayStation Repair{' '}
+        <span className="text-highlight">Sri Lanka</span>
       </span>
       <span className="sr-only">{SITE.name}</span>
     </span>
