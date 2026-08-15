@@ -24,6 +24,15 @@ export type Repair = {
   description: string;
   turnaround: string;
   icon: string;
+  platforms?: string[];
+};
+
+export type RepairCategory = {
+  id: 'console' | 'controller';
+  title: string;
+  blurb: string;
+  platforms: string[];
+  repairs: Repair[];
 };
 
 export type TikTokVideo = {
@@ -52,7 +61,9 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export const asset = (path: string): string =>
   path.startsWith('/') ? `${BASE_PATH}${path}` : path;
 export const PRODUCTS: Product[] = productsJson.products as Product[];
-export const REPAIRS: Repair[] = repairsJson.repairs as Repair[];
+export const REPAIR_CATEGORIES: RepairCategory[] =
+  repairsJson.categories as RepairCategory[];
+export const REPAIRS: Repair[] = REPAIR_CATEGORIES.flatMap((c) => c.repairs);
 export const TIKTOK = tiktokJson as {
   profileUrl: string;
   handle: string;

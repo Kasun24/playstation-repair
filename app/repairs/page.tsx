@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
 import {
+  AlertOctagon,
+  AlertTriangle,
+  BatteryCharging,
   Cable,
   Disc,
   Gamepad2,
   HardDrive,
   MessagesSquare,
+  MonitorOff,
+  MousePointerClick,
   Search,
   Wind,
   Wrench,
@@ -12,19 +17,24 @@ import {
 } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import RepairForm from '@/components/whatsapp/RepairForm';
-import { REPAIRS } from '@/lib/data';
+import { REPAIR_CATEGORIES } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'PlayStation & Xbox Repairs',
   description:
-    'PlayStation and Xbox console repairs in Sri Lanka — HDMI ports, controller drift, cleaning, disc drive, storage upgrades. Nintendo Switch too.',
+    'PlayStation and Xbox console repairs in Sri Lanka — No Display, HDMI ports, disc drives, BLOD, software, cleaning, storage upgrades. Controller stick drift, triggers, and charging ports too.',
 };
 
 const ICON_MAP: Record<string, LucideIcon> = {
+  AlertOctagon,
+  AlertTriangle,
+  BatteryCharging,
   Cable,
   Disc,
   Gamepad2,
   HardDrive,
+  MonitorOff,
+  MousePointerClick,
   Wind,
   Wrench,
 };
@@ -66,8 +76,8 @@ export default function RepairsPage() {
             <span className="text-accent">Back in the game</span>.
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] sm:text-lg text-muted">
-            PlayStation and Xbox — HDMI ports, stick drift, disc drives, storage
-            upgrades. Real technicians and honest quotes before we start.
+            PlayStation and Xbox — consoles and controllers. Real technicians
+            and honest quotes before we start.
           </p>
           <ul className="mt-7 sm:mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">
@@ -134,42 +144,83 @@ export default function RepairsPage() {
         </div>
       </section>
 
-      <section className="container-page py-12 sm:py-16">
-        <FadeIn onScroll>
-          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
-            What we fix
-          </h2>
-          <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
-            The common repairs we handle every week. Not on the list? Message
-            us — we probably still can.
-          </p>
-        </FadeIn>
-        <div className="mt-8 sm:mt-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {REPAIRS.map((r, i) => {
-            const Icon = ICON_MAP[r.icon] ?? Wrench;
-            return (
-              <FadeIn key={r.id} onScroll delay={i * 0.05}>
-                <article className="flex h-full flex-col rounded-2xl border border-border/70 bg-surface/40 p-6 transition-colors hover:border-accent/40">
-                  <div className="inline-grid h-11 w-11 place-items-center rounded-xl border border-border bg-bg text-text/85">
-                    <Icon size={20} strokeWidth={2.2} aria-hidden />
-                  </div>
-                  <h3 className="mt-5 font-display font-semibold text-lg">
-                    {r.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted">{r.description}</p>
-                  <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs text-accent">
-                    {r.turnaround}
-                  </span>
-                </article>
-              </FadeIn>
-            );
-          })}
-        </div>
-      </section>
+      {REPAIR_CATEGORIES.map((cat, ci) => (
+        <section
+          key={cat.id}
+          className={
+            ci === 0
+              ? 'container-page py-12 sm:py-16'
+              : 'container-page py-12 sm:py-16 border-t border-border/60'
+          }
+        >
+          <FadeIn onScroll>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+              <div>
+                <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-accent">
+                  {cat.id === 'console'
+                    ? 'Console repairs'
+                    : 'Controller repairs'}
+                </p>
+                <h2 className="mt-2 text-2xl sm:text-4xl font-display font-bold tracking-tight">
+                  {cat.title}
+                </h2>
+                <p className="mt-3 text-muted max-w-2xl text-[15px] sm:text-base">
+                  {cat.blurb}
+                </p>
+              </div>
+              <ul
+                className="flex flex-wrap gap-1.5 sm:justify-end"
+                aria-label={`${cat.title} platforms`}
+              >
+                {cat.platforms.map((p) => (
+                  <li
+                    key={p}
+                    className="rounded-full border border-border/70 bg-surface/40 px-2.5 py-1 text-xs text-text/80"
+                  >
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+
+          <div className="mt-8 sm:mt-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {cat.repairs.map((r, i) => {
+              const Icon = ICON_MAP[r.icon] ?? Wrench;
+              return (
+                <FadeIn key={r.id} onScroll delay={i * 0.05}>
+                  <article className="flex h-full flex-col rounded-2xl border border-border/70 bg-surface/40 p-6 transition-colors hover:border-accent/40">
+                    <div className="inline-grid h-11 w-11 place-items-center rounded-xl border border-border bg-bg text-text/85">
+                      <Icon size={20} strokeWidth={2.2} aria-hidden />
+                    </div>
+                    <h3 className="mt-5 font-display font-semibold text-lg">
+                      {r.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted">{r.description}</p>
+                    <div className="mt-5 flex flex-wrap items-center gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs text-accent">
+                        {r.turnaround}
+                      </span>
+                      {r.platforms?.map((p) => (
+                        <span
+                          key={p}
+                          className="inline-flex items-center rounded-full border border-border/60 bg-bg/60 px-2.5 py-1 text-[11px] uppercase tracking-wide text-text/70"
+                        >
+                          {p}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </section>
+      ))}
 
       <section
         id="book"
-        className="border-t border-border/60 bg-surface/30"
+        className="border-t border-border/60 bg-surface/30 scroll-mt-20"
       >
         <div className="container-page py-12 sm:py-20">
           <FadeIn onScroll>
@@ -177,8 +228,8 @@ export default function RepairsPage() {
               Book a repair
             </h2>
             <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
-              Fill this in — we’ll pick up the conversation on WhatsApp. Your
-              message stays visible on the right so you can double-check
+              Fill this in — we&rsquo;ll pick up the conversation on WhatsApp.
+              Your message stays visible on the right so you can double-check
               before sending.
             </p>
           </FadeIn>
