@@ -11,7 +11,7 @@ export default function RepairCTABanner() {
         <div className="relative overflow-hidden rounded-2xl border border-accent/30 bg-surface/50">
           <div
             className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.18]"
-            style={{ backgroundImage: `url(${asset('/backgrounds/workshop-bg.jpg')})` }}
+            style={{ backgroundImage: `url(${asset('/workshop/cta.jpg')})` }}
             aria-hidden
           />
           <div

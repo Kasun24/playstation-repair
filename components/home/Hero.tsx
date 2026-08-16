@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
         <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.35]"
-          style={{ backgroundImage: `url(${asset('/backgrounds/hero-bg.jpg')})` }}
+          style={{ backgroundImage: `url(${asset('/workshop/hero.jpg')})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bg/70 via-bg/85 to-bg" />
         <div className="absolute left-0 top-1/3 h-[420px] w-[420px] -translate-x-1/3 rounded-full bg-accent/25 blur-3xl" />
