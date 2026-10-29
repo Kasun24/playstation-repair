@@ -31,7 +31,7 @@ jobs:
         env:
           # Serves the site under https://<user>.github.io/playstation-repair/.
           # Leave empty (or delete) if you point a custom domain / <user>.github.io repo at it.
-          NEXT_PUBLIC_BASE_PATH: /playstation-repair
+             NEXT_PUBLIC_BASE_PATH: ''
 
       - uses: actions/configure-pages@v5
         with:
