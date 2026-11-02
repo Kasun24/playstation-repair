@@ -26,11 +26,11 @@ Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site 
 
 | What                        | File                                 |
 | --------------------------- | ------------------------------------ |
-| Business name, contact, URL | `data/site.json`                     |
+| Business name, contact, URL, hours, map | `data/site.json` (hours drive the live "Open now" badge) |
 | Repair services             | `data/repairs.json` (each one gets a page at `/repairs/<slug>/`) |
 | Repair FAQs                 | `data/faq.json`                      |
 | Products (consoles etc.)    | `data/products.json`                 |
-| TikTok videos               | `data/tiktok.json`                   |
+| TikTok videos               | `data/tiktok.json` (`poster` = cover image; player loads on tap) |
 | Customer reviews            | `data/testimonials.json` (section hidden while empty) |
 | Logo / share image          | `public/logo.jpg`, `public/og-image.jpg` |
 | Workshop photos             | `public/workshop/`                   |
@@ -41,6 +41,5 @@ Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site 
 - `siteUrl` in `data/site.json` drives canonical URLs, the sitemap, and `robots.txt` — keep it set to the live domain.
 - Page metadata comes from `pageMeta()` in `lib/seo.ts`; each page sets its own canonical URL and share tags.
 - Structured data: `LocalBusiness` (every page), `Service` + `BreadcrumbList` (repair pages), `FAQPage` (`/repairs`).
-- `/consoles`, `/games`, `/accessories` currently hold **sample items**, so they're `noindex` and left out of the sitemap. When real stock is listed, remove `noindex: true` in those pages and add them back in `app/sitemap.ts`.
 - Google Search Console: paste the HTML-tag verification code into `googleSiteVerification` in `data/site.json`, deploy, verify, then submit `https://playstationrepairsrilanka.lk/sitemap.xml`.
 - Before adding photos, strip their metadata and resize to ≤1600px wide (phone photos carry device info, location, and rotation flags).

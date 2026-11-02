@@ -9,8 +9,6 @@ export const metadata: Metadata = pageMeta({
   description:
     'Gaming consoles — PlayStation, Xbox, Nintendo and PC handhelds. Ask about availability on WhatsApp.',
   path: '/consoles/',
-  // Sample catalog for now — keep out of Google until real stock is listed.
-  noindex: true,
 });
 
 export default function ConsolesPage() {

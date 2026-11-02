@@ -1,25 +1,28 @@
 {
   "profileUrl": "https://www.tiktok.com/@playstation.repair",
   "handle": "@playstation.repair",
-  "_note": "Add more videos by pasting a full https://www.tiktok.com/@playstation.repair/video/<id> URL — extract the numeric id and drop into the videos array below.",
+  "_note": "Add videos by pasting a full https://www.tiktok.com/@playstation.repair/video/<id> URL — put the numeric id in 'id'. 'poster' is the cover image shown before the video is tapped (any image in /public); the TikTok player only loads on tap.",
   "videos": [
     {
       "id": "7592271392280710408",
       "username": "playstation.repair",
       "url": "https://www.tiktok.com/@playstation.repair/video/7592271392280710408",
-      "caption": "PS5 service — liquid metal & thermal putty replacement"
+      "caption": "PS5 service — liquid metal & thermal putty replacement",
+      "poster": "/workshop/gallery-ps5-mainboard.jpg"
     },
     {
       "id": "7590998631415549192",
       "username": "playstation.repair",
       "url": "https://www.tiktok.com/@playstation.repair/video/7590998631415549192",
-      "caption": "PS5 controller repair"
+      "caption": "PS5 controller repair",
+      "poster": "/workshop/gallery-ps5-dualsense.jpg"
     },
     {
       "id": "7369575169678953736",
       "username": "playstation.repair",
       "url": "https://www.tiktok.com/@playstation.repair/video/7369575169678953736",
-      "caption": "PS4 controller repair"
+      "caption": "PS4 controller repair",
+      "poster": "/workshop/gallery-ds4-teardown.jpg"
     }
   ]
 }

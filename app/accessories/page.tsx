@@ -9,8 +9,6 @@ export const metadata: Metadata = pageMeta({
   description:
     'Controllers, headsets, charging, cooling and storage. Ask about availability on WhatsApp.',
   path: '/accessories/',
-  // Sample catalog for now — keep out of Google until real stock is listed.
-  noindex: true,
 });
 
 export default function AccessoriesPage() {

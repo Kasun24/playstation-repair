@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMeta } from '@/lib/seo';
-import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Mail, MessageCircle, Phone } from 'lucide-react';
+import VisitWorkshop from '@/components/VisitWorkshop';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/whatsapp/ContactForm';
 import { SocialTiles } from '@/components/SocialLinks';
@@ -26,7 +27,7 @@ export default function ContactPage() {
             Let’s <span className="text-accent">talk</span>.
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] sm:text-lg text-muted">
-            Questions about stock, a repair, or a trade-in? WhatsApp is the
+            Questions about stock or a repair? WhatsApp is the
             fastest way to reach us — the form below just opens a chat with
             your message pre-filled.
           </p>
@@ -35,7 +36,7 @@ export default function ContactPage() {
 
       <section className="border-y border-border/60 bg-surface/30">
         <div className="container-page py-10 sm:py-14">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
             <FadeIn onScroll>
               <a
                 href={waLink('Hi PlayStation Repair Sri Lanka — I have a question.')}
@@ -78,7 +79,7 @@ export default function ContactPage() {
               </a>
             </FadeIn>
 
-            <FadeIn onScroll delay={0.1}>
+            <FadeIn onScroll delay={0.1} className="col-span-2 lg:col-span-1">
               <a
                 href={`mailto:${SITE.email}`}
                 className="group flex h-full flex-col rounded-2xl border border-border/70 bg-bg/40 p-5 transition-colors hover:border-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
@@ -90,62 +91,36 @@ export default function ContactPage() {
                   aria-hidden
                 />
                 <h2 className="mt-4 font-display font-semibold">Email</h2>
-                <p className="mt-1 text-sm text-muted break-all">{SITE.email}</p>
+                <p className="mt-1 text-sm text-muted [overflow-wrap:anywhere]">{SITE.email}</p>
                 <p className="mt-3 text-xs text-muted">
                   Replies within a day
                 </p>
               </a>
             </FadeIn>
 
-            <FadeIn onScroll delay={0.15}>
-              <a
-                href={SITE.address.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-full flex-col rounded-2xl border border-border/70 bg-bg/40 p-5 transition-colors hover:border-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              >
-                <MapPin
-                  size={20}
-                  strokeWidth={2.2}
-                  className="text-text/70"
-                  aria-hidden
-                />
-                <h2 className="mt-4 font-display font-semibold">Workshop</h2>
-                <p className="mt-1 text-sm text-muted">
-                  {[SITE.address.street, SITE.address.city]
-                    .filter(Boolean)
-                    .join(', ') || SITE.address.country}
-                </p>
-                <p className="mt-3 text-xs text-accent">
-                  Open in Google Maps →
-                </p>
-              </a>
-            </FadeIn>
           </div>
 
-          <FadeIn onScroll delay={0.2}>
-            <div className="mt-8 flex items-start gap-3 rounded-2xl border border-border/70 bg-bg/40 p-5 sm:items-center">
-              <Clock
-                size={20}
-                strokeWidth={2.2}
-                className="mt-0.5 shrink-0 text-text/70 sm:mt-0"
-                aria-hidden
-              />
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-6">
-                <span className="font-display font-semibold">Open</span>
-                {SITE.hours.map((h) => (
-                  <span key={h.days} className="text-sm text-muted">
-                    <span className="text-text/85">{h.days}</span>{' '}
-                    · {h.time}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
       <section className="container-page py-12 sm:py-20">
+        <FadeIn onScroll>
+          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
+            Send us a message
+          </h2>
+          <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
+            Fill this in — we’ll pick up the conversation on WhatsApp. Preview
+            on the right updates as you type.
+          </p>
+        </FadeIn>
+        <div className="mt-8 sm:mt-10">
+          <ContactForm />
+        </div>
+      </section>
+
+      <VisitWorkshop heading="Find the workshop" />
+
+      <section className="container-page py-12 sm:py-20 border-t border-border/60">
         <FadeIn onScroll>
           <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
             Follow us
@@ -160,20 +135,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="container-page py-12 sm:py-20 border-t border-border/60">
-        <FadeIn onScroll>
-          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
-            Send us a message
-          </h2>
-          <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
-            Fill this in — we’ll pick up the conversation on WhatsApp. Preview
-            on the right updates as you type.
-          </p>
-        </FadeIn>
-        <div className="mt-8 sm:mt-10">
-          <ContactForm />
-        </div>
-      </section>
     </>
   );
 }

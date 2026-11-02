@@ -14,6 +14,10 @@ export default function ShowcaseHeader({
         {title}
       </h1>
       <p className="mt-3 max-w-xl text-muted">{blurb}</p>
+      <p className="mt-2 max-w-xl text-sm text-muted">
+        Stock changes often — tap <span className="text-accent">Ask on WhatsApp</span>{' '}
+        on any item for availability and price.
+      </p>
     </header>
   );
 }

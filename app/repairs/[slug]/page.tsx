@@ -57,18 +57,18 @@ export default function RepairDetailPage({ params }: Params) {
       <section className="container-page pt-8 pb-12 sm:pt-12 sm:pb-16">
         <nav aria-label="Breadcrumb" className="text-sm text-muted">
           <ol className="flex flex-wrap items-center gap-1.5">
-            <li>
+            <li className="flex items-center gap-1.5">
               <Link href="/" className="hover:text-text">
                 Home
               </Link>
+              <ChevronRight size={14} aria-hidden />
             </li>
-            <ChevronRight size={14} aria-hidden />
-            <li>
+            <li className="flex items-center gap-1.5">
               <Link href="/repairs" className="hover:text-text">
                 Repairs
               </Link>
+              <ChevronRight size={14} aria-hidden />
             </li>
-            <ChevronRight size={14} aria-hidden />
             <li aria-current="page" className="text-text/85">
               {r.name}
             </li>
@@ -113,7 +113,7 @@ export default function RepairDetailPage({ params }: Params) {
               Ask on WhatsApp
             </a>
             <Link
-              href="/repairs/#book"
+              href={`/repairs/?repair=${r.id}#book`}
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface/40 px-5 py-3 font-medium text-text transition-colors hover:border-accent/60 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               Book with the form

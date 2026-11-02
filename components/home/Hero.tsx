@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
+import OpenStatus from '@/components/OpenStatus';
 import { SITE, asset } from '@/lib/data';
 import { waLink } from '@/lib/whatsapp';
 
@@ -21,9 +22,12 @@ export default function Hero() {
 
       <div className="container-page pt-12 pb-14 sm:pt-24 sm:pb-28">
         <FadeIn>
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-text/60">
-            Kadawatha · Sri Lanka
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-text/60">
+              Kadawatha · Sri Lanka
+            </p>
+            <OpenStatus />
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.08}>

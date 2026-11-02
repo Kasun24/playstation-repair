@@ -21,8 +21,8 @@ const ITEMS: Item[] = [
   },
   {
     icon: MapPin,
-    title: 'Sri Lanka based',
-    blurb: 'Drop by or arrange it over WhatsApp — whichever works for you.',
+    title: 'Kadawatha workshop',
+    blurb: 'Open 7 days. Drop by, or arrange it over WhatsApp first.',
   },
 ];
 

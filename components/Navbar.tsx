@@ -36,6 +36,15 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -48,6 +57,21 @@ export default function Navbar() {
   const waHref = waLink('Hi PlayStation Repair Sri Lanka — I have a question.');
 
   return (
+    <>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-nav-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            onClick={() => setOpen(false)}
+            className="lg:hidden fixed inset-x-0 bottom-0 top-16 z-40 bg-black/60"
+            aria-hidden
+          />
+        )}
+      </AnimatePresence>
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         scrolled
@@ -121,7 +145,7 @@ export default function Navbar() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          className="md:hidden -mr-2 p-2 rounded-md text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="lg:hidden -mr-2 p-2 rounded-md text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           {open ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
         </button>
@@ -136,7 +160,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
-            className="md:hidden bg-bg/95 backdrop-blur-xl border-b border-border/60"
+            className="lg:hidden bg-bg/95 backdrop-blur-xl border-b border-border/60"
           >
             <nav
               className="container-page py-2 flex flex-col"
@@ -187,5 +211,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }

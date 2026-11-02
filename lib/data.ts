@@ -43,6 +43,7 @@ export type TikTokVideo = {
   username: string;
   url: string;
   caption?: string;
+  poster?: string;
 };
 
 export type Testimonial = {

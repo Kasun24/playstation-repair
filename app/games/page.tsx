@@ -9,8 +9,6 @@ export const metadata: Metadata = pageMeta({
   description:
     'Video games across PlayStation, Xbox, Nintendo and more. Ask about availability on WhatsApp.',
   path: '/games/',
-  // Sample catalog for now — keep out of Google until real stock is listed.
-  noindex: true,
 });
 
 export default function GamesPage() {

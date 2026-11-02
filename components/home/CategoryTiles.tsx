@@ -4,7 +4,6 @@ import {
   Disc3,
   Headphones,
   Joystick,
-  Wrench,
   type LucideIcon,
 } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
@@ -18,13 +17,6 @@ type Tile = {
 };
 
 const TILES: Tile[] = [
-  {
-    title: 'Repairs',
-    blurb: 'PlayStation, Xbox & controller repairs.',
-    href: '/repairs',
-    icon: Wrench,
-    featured: true,
-  },
   {
     title: 'Consoles',
     blurb: 'PlayStation, Xbox, Nintendo & PC handhelds.',
@@ -50,14 +42,15 @@ export default function CategoryTiles() {
     <section className="container-page py-12 sm:py-24">
       <FadeIn onScroll>
         <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
-          What we do
+          Also in store
         </h2>
         <p className="mt-3 text-muted max-w-lg text-[15px] sm:text-base">
-          Repairs are our craft. Consoles, games and accessories are here too.
+          Consoles, games and accessories — ask on WhatsApp for what&rsquo;s
+          in stock today.
         </p>
       </FadeIn>
 
-      <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <div className="mt-8 sm:mt-10 grid gap-3 sm:grid-cols-3 sm:gap-4">
         {TILES.map((tile, i) => {
           const Icon = tile.icon;
           const featured = tile.featured;

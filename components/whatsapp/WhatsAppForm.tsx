@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { MessageCircle } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { CheckCircle2, MessageCircle } from 'lucide-react';
 import { waLink } from '@/lib/whatsapp';
 
 export type Field = {
@@ -12,18 +12,23 @@ export type Field = {
   placeholder?: string;
   options?: string[];
   rows?: number;
+  /** Extra check on a non-empty value; return an error message or null. */
+  validate?: (value: string) => string | null;
 };
 
 type Props = {
   fields: Field[];
   buildMessage: (values: Record<string, string>) => string;
   submitLabel?: string;
+  /** Values to pre-fill (e.g. from a link); applied when they change. */
+  presets?: Record<string, string>;
 };
 
 export default function WhatsAppForm({
   fields,
   buildMessage,
   submitLabel = 'Send on WhatsApp',
+  presets,
 }: Props) {
   const initial = useMemo(
     () => Object.fromEntries(fields.map((f) => [f.name, ''])),
@@ -31,19 +36,33 @@ export default function WhatsAppForm({
   );
   const [values, setValues] = useState<Record<string, string>>(initial);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [sentUrl, setSentUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (presets && Object.keys(presets).length) {
+      setValues((v) => ({ ...v, ...presets }));
+    }
+  }, [presets]);
 
   const message = useMemo(() => buildMessage(values), [values, buildMessage]);
 
-  const isMissing = (f: Field) => f.required && !(values[f.name] ?? '').trim();
-  const requiredMissing = fields.some(isMissing);
+  const errorFor = (f: Field): string | null => {
+    const value = (values[f.name] ?? '').trim();
+    if (!value) return f.required ? 'This is required.' : null;
+    return f.validate ? f.validate(value) : null;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (requiredMissing) {
+    const firstInvalid = fields.find((f) => errorFor(f));
+    if (firstInvalid) {
       setTouched(Object.fromEntries(fields.map((f) => [f.name, true])));
+      document.getElementById(`waf-${firstInvalid.name}`)?.focus();
       return;
     }
-    window.open(waLink(message), '_blank', 'noopener,noreferrer');
+    const url = waLink(message);
+    setSentUrl(url);
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const update =
@@ -63,7 +82,8 @@ export default function WhatsAppForm({
     <div className="grid gap-6 lg:grid-cols-[1fr_minmax(0,420px)]">
       <form noValidate onSubmit={handleSubmit} className="space-y-4">
         {fields.map((field) => {
-          const invalid = touched[field.name] && isMissing(field);
+          const error = touched[field.name] ? errorFor(field) : null;
+          const invalid = Boolean(error);
           const id = `waf-${field.name}`;
           const shared =
             'mt-1.5 block w-full rounded-lg border bg-surface/40 px-3 py-2.5 text-base text-text placeholder:text-muted focus:outline-none focus:ring-2 sm:py-2 sm:text-sm';
@@ -92,6 +112,7 @@ export default function WhatsAppForm({
                   placeholder={field.placeholder}
                   required={field.required}
                   aria-invalid={invalid || undefined}
+                  aria-describedby={invalid ? `${id}-error` : undefined}
                   className={`${shared} ${state}`}
                 />
               ) : field.type === 'select' ? (
@@ -103,6 +124,7 @@ export default function WhatsAppForm({
                   onBlur={blur(field.name)}
                   required={field.required}
                   aria-invalid={invalid || undefined}
+                  aria-describedby={invalid ? `${id}-error` : undefined}
                   className={`${shared} ${state}`}
                 >
                   <option value="">— select —</option>
@@ -123,11 +145,14 @@ export default function WhatsAppForm({
                   placeholder={field.placeholder}
                   required={field.required}
                   aria-invalid={invalid || undefined}
+                  aria-describedby={invalid ? `${id}-error` : undefined}
                   className={`${shared} ${state}`}
                 />
               )}
-              {invalid && (
-                <p className="mt-1 text-xs text-red-400">This is required.</p>
+              {error && (
+                <p id={`${id}-error`} className="mt-1 text-xs text-red-400">
+                  {error}
+                </p>
               )}
             </div>
           );
@@ -141,10 +166,22 @@ export default function WhatsAppForm({
             <MessageCircle size={18} strokeWidth={2.4} aria-hidden />
             {submitLabel}
           </button>
-          <p className="mt-3 text-xs text-muted">
-            Opens WhatsApp with the message pre-filled — nothing sends until
-            you tap send there.
-          </p>
+          {sentUrl ? (
+            <p className="mt-3 flex items-start gap-2 text-sm text-emerald-300" role="status">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" aria-hidden />
+              <span>
+                WhatsApp opened — just tap send there. Didn&rsquo;t open?{' '}
+                <a href={sentUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  Open WhatsApp
+                </a>
+              </span>
+            </p>
+          ) : (
+            <p className="mt-3 text-xs text-muted">
+              Opens WhatsApp with the message pre-filled — nothing sends until
+              you tap send there.
+            </p>
+          )}
         </div>
       </form>
 

@@ -21,7 +21,7 @@ const FIELDS: Field[] = [
       'Game availability',
       'Accessory question',
       'Repair enquiry',
-      'Trade-in / pre-owned',
+      'Pre-owned consoles',
       'Something else',
     ],
   },

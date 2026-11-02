@@ -13,7 +13,8 @@
     "city": "Kadawatha",
     "country": "Sri Lanka",
     "mapsUrl": "https://share.google/6GB7SNDKox5u5auS1",
-    "region": "Western Province"
+    "region": "Western Province",
+    "mapEmbedQuery": "436/D, Sooriyapaluwa Road, Ranmuthugala, Kadawatha, Sri Lanka"
   },
   "hours": [
     {
@@ -36,5 +37,5 @@
     }
   },
   "googleSiteVerification": "",
-  "_note": "All contact details are real as of 2026-10-29. Address and socials confirmed 2026-08-01. googleSiteVerification: paste the content value of the Google Search Console HTML-tag verification here."
+  "_note": "All contact details are real as of 2026-10-29. Address and socials confirmed 2026-08-01. googleSiteVerification: paste the content value of the Google Search Console HTML-tag verification here. mapEmbedQuery: what the embedded map searches for — use the business name as listed on Google Maps, or 'lat,lng', if the pin lands in the wrong place."
 }

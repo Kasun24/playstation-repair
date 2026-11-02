@@ -57,23 +57,25 @@ export const SOCIALS: SocialItem[] = [
 
 export function SocialTiles() {
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+    <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
       {SOCIALS.map((s) => (
         <a
           key={`${s.brand}-${s.platform}`}
           href={s.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-full flex-col rounded-2xl border border-border/70 bg-bg/40 p-5 transition-colors hover:border-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="group flex h-full items-center gap-4 rounded-2xl border border-border/70 bg-bg/40 p-4 sm:flex-col sm:items-start sm:gap-0 sm:p-5 transition-colors hover:border-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <s.Icon
-            className="h-5 w-5 text-text/70 transition-colors group-hover:text-accent"
+            className="h-5 w-5 shrink-0 text-text/70 transition-colors group-hover:text-accent"
           />
-          <h3 className="mt-4 font-display font-semibold">
-            {s.brand} · {s.platform}
-          </h3>
-          <p className="mt-1 text-sm text-muted break-all">{s.label}</p>
-          <p className="mt-3 text-xs text-accent">Open →</p>
+          <span className="min-w-0 flex-1 sm:mt-4">
+            <h3 className="font-display font-semibold">
+              {s.brand} · {s.platform}
+            </h3>
+            <p className="mt-1 truncate text-sm text-muted">{s.label}</p>
+          </span>
+          <p className="shrink-0 text-xs text-accent sm:mt-3">Open →</p>
         </a>
       ))}
     </div>

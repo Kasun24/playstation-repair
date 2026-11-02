@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, MessagesSquare, Search, Wrench } from 'lucide-react';
+import {
+  ArrowRight,
+  MessageCircle,
+  MessagesSquare,
+  Search,
+  Wrench,
+} from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import RepairForm from '@/components/whatsapp/RepairForm';
 import Faq from '@/components/Faq';
 import { REPAIR_CATEGORIES } from '@/lib/data';
 import { repairIcon } from '@/lib/repairIcons';
 import { pageMeta } from '@/lib/seo';
+import { waLink } from '@/lib/whatsapp';
 import faqJson from '@/data/faq.json';
 
 export const metadata: Metadata = pageMeta({
@@ -79,6 +86,24 @@ export default function RepairsPage() {
               WhatsApp to get started
             </li>
           </ul>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#book"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 font-medium text-white transition-colors hover:bg-accent-dim focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            >
+              <Wrench size={18} strokeWidth={2.4} aria-hidden />
+              Book a repair
+            </a>
+            <a
+              href={waLink('Hi PlayStation Repair Sri Lanka — I need a repair.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border/80 bg-surface/40 px-5 py-3 font-medium text-text transition-colors hover:border-accent/60 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <MessageCircle size={18} strokeWidth={2.4} aria-hidden />
+              Ask on WhatsApp
+            </a>
+          </div>
         </header>
       </section>
 

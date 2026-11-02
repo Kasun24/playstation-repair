@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
       className="group fixed z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-glow transition-transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
     >
       <span
-        className="pointer-events-none absolute inset-0 rounded-full bg-accent/60 motion-safe:animate-ping"
+        className="pointer-events-none absolute inset-0 rounded-full bg-accent/40 motion-safe:animate-[ping_2.8s_cubic-bezier(0,0,0.2,1)_infinite]"
         aria-hidden
       />
       <MessageCircle

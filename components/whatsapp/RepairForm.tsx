@@ -37,6 +37,28 @@ const FAULT_OPTIONS = [
   'Something else — I’ll describe below',
 ];
 
+// Repair id (data/repairs.json) → matching option in FAULT_OPTIONS, for ?repair=<id> links.
+const FAULT_BY_REPAIR: Record<string, string> = {
+  'no-display': FAULT_OPTIONS[0],
+  'hdmi-port': FAULT_OPTIONS[1],
+  'bluray-drive': FAULT_OPTIONS[2],
+  'software-issues': FAULT_OPTIONS[3],
+  blod: FAULT_OPTIONS[4],
+  'blue-light-beep': FAULT_OPTIONS[5],
+  'clean-thermal': FAULT_OPTIONS[6],
+  'storage-upgrade': FAULT_OPTIONS[7],
+  'stick-drift': FAULT_OPTIONS[8],
+  'trigger-buttons': FAULT_OPTIONS[9],
+  'charging-port': FAULT_OPTIONS[10],
+};
+
+const validatePhone = (v: string) => {
+  const digits = v.replace(/\D/g, '');
+  return /^[\d\s+()-]+$/.test(v) && digits.length >= 9 && digits.length <= 13
+    ? null
+    : 'Enter a valid phone number, e.g. 077 123 4567.';
+};
+
 function generateOrderId(): string {
   const now = new Date();
   const y = now.getFullYear();
@@ -60,6 +82,7 @@ const FIELDS: Field[] = [
     type: 'tel',
     required: true,
     placeholder: '07X XXX XXXX',
+    validate: validatePhone,
   },
   {
     name: 'contact',
@@ -93,9 +116,13 @@ const FIELDS: Field[] = [
 
 export default function RepairForm() {
   const [orderId, setOrderId] = useState('');
+  const [presets, setPresets] = useState<Record<string, string>>();
 
   useEffect(() => {
     setOrderId(generateOrderId());
+    const repair = new URLSearchParams(window.location.search).get('repair');
+    const fault = repair ? FAULT_BY_REPAIR[repair] : undefined;
+    if (fault) setPresets({ fault });
   }, []);
 
   const buildMessage = useMemo(
@@ -155,6 +182,7 @@ export default function RepairForm() {
         fields={FIELDS}
         buildMessage={buildMessage}
         submitLabel="Send repair request"
+        presets={presets}
       />
     </div>
   );

@@ -1,118 +1,68 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Play } from 'lucide-react';
-import type { TikTokVideo } from '@/lib/data';
+import { asset, type TikTokVideo } from '@/lib/data';
 
-let scriptPromise: Promise<void> | null = null;
+function TikTokLogo(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M19.321 5.562a5.122 5.122 0 0 1-3.414-1.267 5.144 5.144 0 0 1-1.537-2.85V1h-3.146v13.616c0 1.395-1.132 2.527-2.527 2.527a2.527 2.527 0 1 1 0-5.054c.14 0 .277.012.411.034V8.976a5.671 5.671 0 0 0-.411-.015 5.673 5.673 0 1 0 5.673 5.673V8.632a8.253 8.253 0 0 0 4.951 1.641V7.126a5.132 5.132 0 0 1 0-1.564z" />
+    </svg>
+  );
+}
 
-const loadTikTokScript = (): Promise<void> => {
-  if (typeof window === 'undefined') return Promise.resolve();
-  if (scriptPromise) return scriptPromise;
-  scriptPromise = new Promise<void>((resolve) => {
-    if (document.getElementById('tiktok-embed-js')) {
-      resolve();
-      return;
-    }
-    const s = document.createElement('script');
-    s.id = 'tiktok-embed-js';
-    s.src = 'https://www.tiktok.com/embed.js';
-    s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => resolve();
-    document.body.appendChild(s);
-  });
-  return scriptPromise;
-};
-
+/**
+ * Lightweight TikTok card: shows a cover + caption, and only loads TikTok's
+ * official player iframe when tapped (no heavy embed.js on page load).
+ */
 export default function TikTokEmbed({ video }: { video: TikTokVideo }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    let cancelled = false;
-    let mo: MutationObserver | null = null;
-    let timeoutId: number | null = null;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((e) => e.isIntersecting)) return;
-        io.disconnect();
-        loadTikTokScript();
-        mo = new MutationObserver(() => {
-          if (el.querySelector('iframe') && !cancelled) {
-            setLoaded(true);
-            mo?.disconnect();
-          }
-        });
-        mo.observe(el, { childList: true, subtree: true });
-        timeoutId = window.setTimeout(() => {
-          if (!cancelled) setLoaded(true);
-          mo?.disconnect();
-        }, 8000);
-      },
-      { rootMargin: '200px' },
-    );
-    io.observe(el);
-
-    return () => {
-      cancelled = true;
-      io.disconnect();
-      mo?.disconnect();
-      if (timeoutId !== null) window.clearTimeout(timeoutId);
-    };
-  }, []);
+  const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-surface to-surface-2 min-h-[560px]">
-      <div
-        aria-hidden={loaded}
-        className={`absolute inset-0 transition-opacity duration-500 ${
-          loaded ? 'pointer-events-none opacity-0' : 'opacity-100'
-        }`}
-      >
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent_30%,rgba(255,255,255,0.05)_45%,transparent_60%)] bg-[length:200%_100%] animate-shimmer" />
-        <div className="absolute inset-0 flex flex-col justify-between p-4">
-          <span className="text-xs uppercase tracking-widest text-muted">
-            @{video.username}
-          </span>
-          <div>
-            <div className="mb-2 inline-grid h-9 w-9 place-items-center rounded-full border border-accent/40 bg-accent/20 text-accent">
-              <Play
-                size={14}
-                strokeWidth={2.6}
-                className="ml-0.5"
-                aria-hidden
-              />
-            </div>
-            {video.caption && (
-              <p className="text-sm text-text/85">{video.caption}</p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div ref={containerRef} className="relative flex justify-center">
-        <blockquote
-          className="tiktok-embed"
-          cite={video.url}
-          data-video-id={video.id}
-          style={{ maxWidth: '605px', minWidth: '325px', margin: 0 }}
+    <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-border/60 bg-surface">
+      {playing ? (
+        <iframe
+          src={`https://www.tiktok.com/player/v1/${video.id}?autoplay=1&description=1&music_info=0&rel=0`}
+          title={video.caption ?? 'TikTok video'}
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowFullScreen
+          className="absolute inset-0 h-full w-full"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setPlaying(true)}
+          className="group absolute inset-0 h-full w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
+          aria-label={`Play TikTok video: ${video.caption ?? 'workshop video'}`}
         >
-          <section>
-            <a
-              href={video.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-accent underline"
-            >
-              View on TikTok
-            </a>
-          </section>
-        </blockquote>
-      </div>
+          {video.poster && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={asset(video.poster)}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            />
+          )}
+          <span className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-bg/30" aria-hidden />
+          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-bg/70 px-2.5 py-1 text-xs text-text/90 backdrop-blur">
+            <TikTokLogo className="h-3.5 w-3.5" />@{video.username}
+          </span>
+          <span
+            className="absolute left-1/2 top-1/2 inline-grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-bg shadow-lg transition-transform group-hover:scale-110"
+            aria-hidden
+          >
+            <Play size={26} strokeWidth={2.4} className="ml-1" fill="currentColor" />
+          </span>
+          {video.caption && (
+            <span className="absolute inset-x-0 bottom-0 p-4 text-sm font-medium text-text">
+              {video.caption}
+            </span>
+          )}
+        </button>
+      )}
     </div>
   );
 }

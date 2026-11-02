@@ -9,7 +9,7 @@ const FOOTER_REPAIRS = REPAIRS.filter((r) =>
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-border/60 bg-surface/40">
+    <footer className="border-t border-border/60 bg-surface/40">
       <div className="container-page py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <Logo />
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-border/40">
-        <div className="container-page py-4 flex flex-wrap items-center justify-between gap-2 text-xs text-muted">
+        <div className="container-page pt-4 pb-24 sm:pb-4 flex flex-wrap items-center justify-between gap-2 text-xs text-muted">
           <span>© {new Date().getFullYear()} PlayStation Repair Sri Lanka. All rights reserved.</span>
           <span>Kadawatha, Sri Lanka</span>
         </div>
