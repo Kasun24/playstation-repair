@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next';
-import { SITE_URL } from '@/lib/data';
+import { REPAIRS, SITE_URL } from '@/lib/data';
 
+// Shop pages (/consoles, /games, /accessories) are left out while they hold sample
+// items — add them back here (and drop `noindex` on the pages) once real stock is listed.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const entry = (path: string, priority: number) => ({
@@ -11,10 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   return [
     entry('/', 1),
-    entry('/consoles', 0.9),
-    entry('/games', 0.9),
-    entry('/accessories', 0.9),
-    entry('/repairs', 0.9),
-    entry('/contact', 0.7),
+    entry('/repairs/', 0.9),
+    ...REPAIRS.map((r) => entry(`/repairs/${r.slug}/`, 0.8)),
+    entry('/contact/', 0.7),
   ];
 }

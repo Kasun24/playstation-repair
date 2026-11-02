@@ -2,8 +2,8 @@
   "name": "PlayStation Repair Sri Lanka",
   "shortName": "PS Repair LK",
   "tagline": "PlayStation & Xbox repairs in Sri Lanka.",
-  "description": "PlayStation and Xbox console repairs in Sri Lanka — HDMI ports, controller stick drift, disc drives, cleaning, and storage upgrades.",
-  "siteUrl": "https://kasun24.github.io/playstation-repair",
+  "description": "PlayStation and Xbox repair workshop in Kadawatha, Sri Lanka — PS5 & PS4 no display, HDMI port, disc drive, overheating, and controller stick drift repairs.",
+  "siteUrl": "https://playstationrepairsrilanka.lk",
   "whatsapp": "94704151435",
   "whatsappDisplay": "+94 70 415 1435",
   "phone": "+94 70 415 1435",
@@ -12,11 +12,18 @@
     "street": "436/D, Sooriyapaluwa Road, Ranmuthugala",
     "city": "Kadawatha",
     "country": "Sri Lanka",
-    "mapsUrl": "https://share.google/6GB7SNDKox5u5auS1"
+    "mapsUrl": "https://share.google/6GB7SNDKox5u5auS1",
+    "region": "Western Province"
   },
   "hours": [
-    { "days": "Mon – Sat", "time": "10:00 – 20:00" },
-    { "days": "Sun", "time": "12:00 – 18:00" }
+    {
+      "days": "Mon – Sat",
+      "time": "10:00 – 20:00"
+    },
+    {
+      "days": "Sun",
+      "time": "12:00 – 18:00"
+    }
   ],
   "socials": {
     "playstation": {
@@ -28,5 +35,6 @@
       "facebook": "https://www.facebook.com/share/1NcV6uR7dQ/"
     }
   },
-  "_note": "All contact details are real as of 2026-10-29. Address and socials confirmed 2026-08-01."
+  "googleSiteVerification": "",
+  "_note": "All contact details are real as of 2026-10-29. Address and socials confirmed 2026-08-01. googleSiteVerification: paste the content value of the Google Search Console HTML-tag verification here."
 }

@@ -29,9 +29,10 @@ jobs:
 
       - run: npm run build
         env:
-          # Serves the site under https://<user>.github.io/playstation-repair/.
-          # Leave empty (or delete) if you point a custom domain / <user>.github.io repo at it.
-             NEXT_PUBLIC_BASE_PATH: ''
+          # Empty because the site is served from the custom domain root
+          # (playstationrepairsrilanka.lk). Set to '/playstation-repair' only if
+          # the custom domain is ever removed and it's served from github.io again.
+          NEXT_PUBLIC_BASE_PATH: ''
 
       - uses: actions/configure-pages@v5
         with:

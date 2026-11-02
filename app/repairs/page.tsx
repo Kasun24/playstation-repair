@@ -1,43 +1,20 @@
 import type { Metadata } from 'next';
-import {
-  AlertOctagon,
-  AlertTriangle,
-  BatteryCharging,
-  Cable,
-  Disc,
-  Gamepad2,
-  HardDrive,
-  MessagesSquare,
-  MonitorOff,
-  MousePointerClick,
-  Search,
-  Wind,
-  Wrench,
-  type LucideIcon,
-} from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, MessagesSquare, Search, Wrench } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import RepairForm from '@/components/whatsapp/RepairForm';
+import Faq from '@/components/Faq';
 import { REPAIR_CATEGORIES } from '@/lib/data';
+import { repairIcon } from '@/lib/repairIcons';
+import { pageMeta } from '@/lib/seo';
+import faqJson from '@/data/faq.json';
 
-export const metadata: Metadata = {
-  title: 'PlayStation & Xbox Repairs',
+export const metadata: Metadata = pageMeta({
+  title: 'PS5, PS4 & Xbox Repair Services in Sri Lanka',
   description:
-    'PlayStation and Xbox console repairs in Sri Lanka — No Display, HDMI ports, disc drives, BLOD, software, cleaning, storage upgrades. Controller stick drift, triggers, and charging ports too.',
-};
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  AlertOctagon,
-  AlertTriangle,
-  BatteryCharging,
-  Cable,
-  Disc,
-  Gamepad2,
-  HardDrive,
-  MonitorOff,
-  MousePointerClick,
-  Wind,
-  Wrench,
-};
+    'PlayStation and Xbox repairs in Kadawatha, Sri Lanka — no display, HDMI port, disc drive, BLOD, overheating, software and SSD upgrades. Controller stick drift, buttons and charging ports. Free diagnosis.',
+  path: '/repairs/',
+});
 
 const STEPS = [
   {
@@ -76,8 +53,8 @@ export default function RepairsPage() {
             <span className="text-accent">Back in the game</span>.
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] sm:text-lg text-muted">
-            PlayStation and Xbox — consoles and controllers. Real technicians
-            and honest quotes before we start.
+            PlayStation and Xbox repairs in Kadawatha, Sri Lanka — consoles
+            and controllers. Free diagnosis and a firm price before we start.
           </p>
           <ul className="mt-7 sm:mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
             <li className="flex items-center gap-2">
@@ -186,10 +163,13 @@ export default function RepairsPage() {
 
           <div className="mt-8 sm:mt-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {cat.repairs.map((r, i) => {
-              const Icon = ICON_MAP[r.icon] ?? Wrench;
+              const Icon = repairIcon(r.icon);
               return (
                 <FadeIn key={r.id} onScroll delay={i * 0.05}>
-                  <article className="flex h-full flex-col rounded-2xl border border-border/70 bg-surface/40 p-6 transition-colors hover:border-accent/40">
+                  <Link
+                    href={`/repairs/${r.slug}`}
+                    className="group flex h-full flex-col rounded-2xl border border-border/70 bg-surface/40 p-6 transition-colors hover:border-accent/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
                     <div className="inline-grid h-11 w-11 place-items-center rounded-xl border border-border bg-bg text-text/85">
                       <Icon size={20} strokeWidth={2.2} aria-hidden />
                     </div>
@@ -210,13 +190,35 @@ export default function RepairsPage() {
                         </span>
                       ))}
                     </div>
-                  </article>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-accent">
+                      Details
+                      <ArrowRight
+                        size={14}
+                        className="transition-transform group-hover:translate-x-0.5"
+                        aria-hidden
+                      />
+                    </span>
+                  </Link>
                 </FadeIn>
               );
             })}
           </div>
         </section>
       ))}
+
+      <section className="container-page py-12 sm:py-16 border-t border-border/60">
+        <FadeIn onScroll>
+          <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight">
+            Repair questions
+          </h2>
+          <p className="mt-3 text-muted max-w-xl text-[15px] sm:text-base">
+            The things people ask us most.
+          </p>
+        </FadeIn>
+        <div className="mt-8 sm:mt-10 max-w-3xl">
+          <Faq items={faqJson.faqs} />
+        </div>
+      </section>
 
       <section
         id="book"

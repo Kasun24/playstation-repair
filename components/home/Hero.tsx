@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="container-page pt-12 pb-14 sm:pt-24 sm:pb-28">
         <FadeIn>
           <p className="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-text/60">
-            Sri Lanka
+            Kadawatha · Sri Lanka
           </p>
         </FadeIn>
 

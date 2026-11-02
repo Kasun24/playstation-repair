@@ -20,6 +20,9 @@ export type Product = {
 
 export type Repair = {
   id: string;
+  slug: string;
+  seoTitle: string;
+  symptoms: string[];
   name: string;
   description: string;
   turnaround: string;
@@ -64,6 +67,8 @@ export const PRODUCTS: Product[] = productsJson.products as Product[];
 export const REPAIR_CATEGORIES: RepairCategory[] =
   repairsJson.categories as RepairCategory[];
 export const REPAIRS: Repair[] = REPAIR_CATEGORIES.flatMap((c) => c.repairs);
+export const repairCategoryOf = (r: Repair): RepairCategory =>
+  REPAIR_CATEGORIES.find((c) => c.repairs.some((x) => x.id === r.id))!;
 export const TIKTOK = tiktokJson as {
   profileUrl: string;
   handle: string;

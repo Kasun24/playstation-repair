@@ -3,7 +3,8 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import { SITE, SITE_URL } from '@/lib/data';
+import { REPAIRS, SITE, SITE_URL } from '@/lib/data';
+import { OG_IMAGE } from '@/lib/seo';
 import './globals.css';
 
 const inter = Inter({
@@ -18,54 +19,41 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
-const DEFAULT_TITLE = `${SITE.name} — PlayStation & Xbox Repairs, Consoles & Games`;
+const DEFAULT_TITLE =
+  'PlayStation & Xbox Repair in Sri Lanka | PS5, PS4 Repair Kadawatha';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: DEFAULT_TITLE,
-    template: `%s · ${SITE.name}`,
+    template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
-  keywords: [
-    'PlayStation repair Sri Lanka',
-    'Xbox repair Sri Lanka',
-    'PS5 repair Sri Lanka',
-    'PS4 repair Sri Lanka',
-    'Xbox Series X repair Sri Lanka',
-    'Xbox Series S repair Sri Lanka',
-    'Xbox One repair Sri Lanka',
-    'HDMI port repair PlayStation',
-    'HDMI port repair Xbox',
-    'controller drift fix Sri Lanka',
-    'PlayStation disc drive repair',
-    'Xbox disc drive repair',
-    'console repair Sri Lanka',
-    'gaming store Sri Lanka',
-    SITE.name,
-  ],
   applicationName: SITE.name,
   authors: [{ name: SITE.name }],
-  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     siteName: SITE.name,
     title: DEFAULT_TITLE,
     description: SITE.description,
-    url: '/',
     locale: 'en_LK',
+    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: DEFAULT_TITLE,
     description: SITE.description,
+    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   formatDetection: { telephone: true, email: true, address: true },
+  ...(SITE.googleSiteVerification
+    ? { verification: { google: SITE.googleSiteVerification } }
+    : {}),
 };
 
 export const viewport = {
@@ -76,42 +64,53 @@ export const viewport = {
   viewportFit: 'cover' as const,
 };
 
+const DAY_NAMES: Record<string, string[]> = {
+  'Mon – Sat': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  Sun: ['Sunday'],
+};
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#business`,
   name: SITE.name,
+  alternateName: SITE.shortName,
   description: SITE.description,
-  url: SITE_URL,
+  url: `${SITE_URL}/`,
+  image: [`${SITE_URL}/og-image.jpg`, `${SITE_URL}/workshop/hero.jpg`],
+  logo: `${SITE_URL}/logo.jpg`,
   telephone: SITE.phone,
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',
-    ...(SITE.address.street ? { streetAddress: SITE.address.street } : {}),
-    ...(SITE.address.city ? { addressLocality: SITE.address.city } : {}),
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.region,
     addressCountry: 'LK',
   },
-  ...(SITE.address.mapsUrl ? { hasMap: SITE.address.mapsUrl } : {}),
-  openingHoursSpecification: [
-    {
+  hasMap: SITE.address.mapsUrl,
+  areaServed: { '@type': 'Country', name: 'Sri Lanka' },
+  openingHoursSpecification: SITE.hours.map((h) => {
+    const [opens, closes] = h.time.split('–').map((t) => t.trim());
+    return {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-      ],
-      opens: '10:00',
-      closes: '20:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Sunday',
-      opens: '12:00',
-      closes: '18:00',
-    },
-  ],
+      dayOfWeek: DAY_NAMES[h.days] ?? h.days,
+      opens,
+      closes,
+    };
+  }),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'PlayStation & Xbox repair services',
+    itemListElement: REPAIRS.map((r) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: r.name,
+        url: `${SITE_URL}/repairs/${r.slug}/`,
+      },
+    })),
+  },
   sameAs: [
     SITE.socials.playstation.tiktok,
     SITE.socials.playstation.facebook,

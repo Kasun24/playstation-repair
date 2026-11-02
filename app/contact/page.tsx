@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/whatsapp/ContactForm';
@@ -6,11 +7,12 @@ import { SocialTiles } from '@/components/SocialLinks';
 import { SITE } from '@/lib/data';
 import { waLink } from '@/lib/whatsapp';
 
-export const metadata: Metadata = {
-  title: 'Contact',
+export const metadata: Metadata = pageMeta({
+  title: 'Contact & Location — Kadawatha Workshop',
   description:
-    'Reach PlayStation Repair Sri Lanka on WhatsApp, phone, or email — or drop into our workshop.',
-};
+    'Contact PlayStation Repair Sri Lanka on WhatsApp or phone (+94 70 415 1435), or visit our workshop on Sooriyapaluwa Road, Ranmuthugala, Kadawatha. Open 7 days.',
+  path: '/contact/',
+});
 
 export default function ContactPage() {
   return (

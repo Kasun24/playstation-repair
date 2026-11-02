@@ -1,21 +1,14 @@
 # PlayStation Repair Sri Lanka — Website
 
-A fast, static marketing site for a specialist PlayStation repair business in Sri Lanka. Repairs are the focus; consoles, games, and accessories are secondary showcase sections. No e-commerce, no backend — just a clean site with a WhatsApp-based inquiry flow.
+Live: **https://playstationrepairsrilanka.lk**
 
-> **Placeholder contact info:** WhatsApp, phone, email and address in `data/site.json` are still stand-in values. Swap them for the real details in one place when they arrive.
-
-## Status
-
-Phase A — site built with sample data. See [`docs/plan.md`](docs/plan.md) for the full build plan.
+A fast, static marketing site for a PlayStation & Xbox repair workshop in Kadawatha, Sri Lanka. Repairs are the focus; consoles, games, and accessories are secondary showcase sections. No e-commerce, no backend — enquiries go through WhatsApp.
 
 ## Tech stack
 
-- Next.js 14+ with `output: 'export'` (fully static)
-- TypeScript
-- Tailwind CSS (blue + yellow accent, dark theme)
+- Next.js 14 with `output: 'export'` (fully static `out/` folder)
+- TypeScript, Tailwind CSS
 - `framer-motion` for subtle animations, `lucide-react` for icons
-
-No backend, no API routes, no server actions. The `out/` folder is deployable to plain Nginx.
 
 ## Getting started
 
@@ -25,40 +18,29 @@ npm run dev      # local dev at http://localhost:3000
 npm run build    # produces static out/
 ```
 
-## Project structure
+## Deployment
 
-```
-app/                 Next.js app router pages
-components/          UI components
-data/                site.json, products.json, repairs.json, tiktok.json
-public/              logo.jpg + generated product placeholders
-docs/plan.md         Full build plan
-```
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes `out/` to **GitHub Pages**. The custom domain `playstationrepairsrilanka.lk` is set in the repo's Pages settings, so `NEXT_PUBLIC_BASE_PATH` stays empty.
 
-## Where to update brand content
+## Where to update content
 
-| What                    | File                                |
-| ----------------------- | ----------------------------------- |
-| Business name, contact  | `data/site.json`                    |
-| Logo image              | `public/logo.jpg`                   |
-| Favicon                 | `app/icon.svg`                      |
-| Repair services         | `data/repairs.json`                 |
-| Products (consoles etc.)| `data/products.json`                |
-| TikTok videos           | `data/tiktok.json`                  |
-| Theme colors            | `tailwind.config.ts`                |
+| What                        | File                                 |
+| --------------------------- | ------------------------------------ |
+| Business name, contact, URL | `data/site.json`                     |
+| Repair services             | `data/repairs.json` (each one gets a page at `/repairs/<slug>/`) |
+| Repair FAQs                 | `data/faq.json`                      |
+| Products (consoles etc.)    | `data/products.json`                 |
+| TikTok videos               | `data/tiktok.json`                   |
+| Customer reviews            | `data/testimonials.json` (section hidden while empty) |
+| Logo / share image          | `public/logo.jpg`, `public/og-image.jpg` |
+| Workshop photos             | `public/workshop/`                   |
+| Theme colors                | `tailwind.config.ts`                 |
 
-## Roadmap
+## SEO notes
 
-Build order (one commit per step):
-
-1. Scaffold Next.js + TS + Tailwind + static export
-2. Design tokens, navbar, footer
-3. Sample data JSON + placeholder images
-4. Home page
-5. Product showcase pages with filter/search
-6. Repairs page + WhatsApp form
-7. Contact page + floating WhatsApp button
-8. TikTok embed component
-9. SEO, favicon, 404, accessibility, Lighthouse pass
-
-Phase B (CI/CD to Oracle server, Docker) is tracked in the plan but not part of this repo yet.
+- `siteUrl` in `data/site.json` drives canonical URLs, the sitemap, and `robots.txt` — keep it set to the live domain.
+- Page metadata comes from `pageMeta()` in `lib/seo.ts`; each page sets its own canonical URL and share tags.
+- Structured data: `LocalBusiness` (every page), `Service` + `BreadcrumbList` (repair pages), `FAQPage` (`/repairs`).
+- `/consoles`, `/games`, `/accessories` currently hold **sample items**, so they're `noindex` and left out of the sitemap. When real stock is listed, remove `noindex: true` in those pages and add them back in `app/sitemap.ts`.
+- Google Search Console: paste the HTML-tag verification code into `googleSiteVerification` in `data/site.json`, deploy, verify, then submit `https://playstationrepairsrilanka.lk/sitemap.xml`.
+- Before adding photos, strip their metadata and resize to ≤1600px wide (phone photos carry device info, location, and rotation flags).

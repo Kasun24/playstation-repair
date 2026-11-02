@@ -1,0 +1,33 @@
+{
+  "_note": "Shown on /repairs and marked up as FAQPage for Google. Only state things the shop actually does — edit freely.",
+  "faqs": [
+    {
+      "q": "Do you repair both PlayStation and Xbox consoles?",
+      "a": "Yes. We repair PS4, PS5, Xbox One, Xbox Series X and Xbox Series S consoles, plus PS4 DualShock, PS5 DualSense and Xbox controllers."
+    },
+    {
+      "q": "How much does a PS5 or PS4 repair cost?",
+      "a": "It depends on the fault. We diagnose the console first — diagnosis is free — and give you a firm price before any work starts. Send us a WhatsApp message with the model and the problem for a quick idea."
+    },
+    {
+      "q": "How long does a console repair take?",
+      "a": "Most console repairs take 2–4 days. Cleaning and thermal paste takes 1–2 days, and controller repairs such as stick drift are usually done the same day or the next day."
+    },
+    {
+      "q": "Can you fix PS5 controller stick drift?",
+      "a": "Yes. We replace the worn analog stick modules on DualSense, DualShock 4 and Xbox controllers, which fixes drift properly rather than just recalibrating it."
+    },
+    {
+      "q": "My PS5 or PS4 turns on but shows no picture. Can it be fixed?",
+      "a": "Usually, yes. No display is most often a damaged HDMI port or a faulty HDMI chip on the mainboard. We test the console to find the exact cause before quoting."
+    },
+    {
+      "q": "Where is your workshop?",
+      "a": "We're at 436/D, Sooriyapaluwa Road, Ranmuthugala, Kadawatha. Open Monday to Saturday 10:00–20:00 and Sunday 12:00–18:00. Message us on WhatsApp before you come so we're ready for you."
+    },
+    {
+      "q": "How do I book a repair?",
+      "a": "Fill in the booking form on this page or message us on WhatsApp at +94 70 415 1435 with your console model and the problem. A photo or short video of the fault helps."
+    }
+  ]
+}

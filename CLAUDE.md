@@ -7,6 +7,17 @@
 
 ---
 
+## Current state (2026-11-02) — read this first
+The build plan below is historical. The site has since gone live and changed:
+- **Brand:** "PlayStation Repair Sri Lanka" (not GameHub LK), blue + yellow theme (not neon green). Real contact details, address (Kadawatha), socials, TikTok videos and workshop photos are in `data/` and `public/workshop/`.
+- **Live at https://playstationrepairsrilanka.lk** via GitHub Pages (`.github/workflows/deploy.yml`, custom domain set in repo settings). `siteUrl` in `data/site.json` must stay the live domain.
+- **SEO:** use `pageMeta()` from `lib/seo.ts` for every page's metadata (own canonical + share tags). Each repair in `data/repairs.json` has its own page at `/repairs/<slug>/` — don't change existing slugs. Repair FAQs live in `data/faq.json`.
+- **Shop pages** (`/consoles`, `/games`, `/accessories`) still show sample items, so they're `noindex` and out of the sitemap until real stock is added.
+- **Content honesty:** don't invent testimonials, prices, warranties or stock claims — only state what the business has confirmed.
+- **Images:** strip EXIF and resize to ≤1600px wide before committing photos.
+
+---
+
 ## Locked-in decisions & clarifications (2026-07-09)
 These resolve ambiguities in the plan below. If anything here conflicts with the sections that follow, THIS section wins.
 

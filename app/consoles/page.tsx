@@ -1,13 +1,17 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import { CATEGORY_META, productsByCategory } from '@/lib/data';
 import ShowcaseHeader from '@/components/showcase/ShowcaseHeader';
 import ShowcaseGrid from '@/components/showcase/ShowcaseGrid';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Consoles',
   description:
-    'Gaming consoles — PlayStation, Xbox, Nintendo and PC handhelds. From PlayStation Repair Sri Lanka.',
-};
+    'Gaming consoles — PlayStation, Xbox, Nintendo and PC handhelds. Ask about availability on WhatsApp.',
+  path: '/consoles/',
+  // Sample catalog for now — keep out of Google until real stock is listed.
+  noindex: true,
+});
 
 export default function ConsolesPage() {
   const meta = CATEGORY_META.consoles;

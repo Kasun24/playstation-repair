@@ -1,11 +1,17 @@
 {
-  "_note": "Repair services shown on /repairs, grouped into console and controller. Turnaround values are placeholder ranges — adjust to the shop's real times. Icon names come from lucide-react (see app/repairs/page.tsx for the map). 'platforms' is what the shop currently repairs; edit as needed.",
+  "_note": "Repair services shown on /repairs, grouped into console and controller. Turnaround values are placeholder ranges — adjust to the shop's real times. Icon names come from lucide-react (see app/repairs/page.tsx for the map). 'platforms' is what the shop currently repairs; edit as needed. 'slug' is the page URL under /repairs/ — avoid changing it once Google has indexed it. 'seoTitle' is the page heading/title; 'symptoms' are shown as 'Signs you need this repair'.",
   "categories": [
     {
       "id": "console",
       "title": "Console Repairs",
       "blurb": "Board-level fixes for PlayStation and Xbox consoles — every job diagnosed before we quote.",
-      "platforms": ["PS4", "PS5", "Xbox One", "Xbox Series X", "Xbox Series S"],
+      "platforms": [
+        "PS4",
+        "PS5",
+        "Xbox One",
+        "Xbox Series X",
+        "Xbox Series S"
+      ],
       "repairs": [
         {
           "id": "no-display",
@@ -13,7 +19,18 @@
           "description": "Console powers on but nothing on the TV? We diagnose HDMI IC, GPU reflow, and video signal faults across PlayStation and Xbox.",
           "turnaround": "2 – 4 days",
           "icon": "MonitorOff",
-          "platforms": ["PlayStation", "Xbox"]
+          "platforms": [
+            "PlayStation",
+            "Xbox"
+          ],
+          "slug": "ps5-ps4-xbox-no-display-repair",
+          "seoTitle": "PS5, PS4 & Xbox No Display Repair",
+          "symptoms": [
+            "Console turns on but the TV says \"No signal\"",
+            "Picture flickers, cuts out, or shows lines",
+            "Display worked after a power cut or storm, then stopped",
+            "Already tried a different HDMI cable and TV"
+          ]
         },
         {
           "id": "hdmi-port",
@@ -21,7 +38,18 @@
           "description": "Wobbly cable or no picture from a bent port? We desolder the damaged port and fit a fresh one — full test before you collect.",
           "turnaround": "2 – 3 days",
           "icon": "Cable",
-          "platforms": ["PlayStation", "Xbox"]
+          "platforms": [
+            "PlayStation",
+            "Xbox"
+          ],
+          "slug": "hdmi-port-replacement",
+          "seoTitle": "PS5, PS4 & Xbox HDMI Port Replacement",
+          "symptoms": [
+            "HDMI cable is loose or wobbles in the port",
+            "Picture only appears when the cable is held at an angle",
+            "Pins inside the port look bent or broken",
+            "No signal after the console was moved or dropped"
+          ]
         },
         {
           "id": "bluray-drive",
@@ -29,7 +57,18 @@
           "description": "Discs not reading, ejecting, or stuck? Laser realignment or full drive replacement — covers PS4, PS5, and Xbox disc consoles.",
           "turnaround": "2 – 4 days",
           "icon": "Disc",
-          "platforms": ["PlayStation", "Xbox"]
+          "platforms": [
+            "PlayStation",
+            "Xbox"
+          ],
+          "slug": "disc-drive-repair",
+          "seoTitle": "PS5, PS4 & Xbox Disc Drive Repair",
+          "symptoms": [
+            "Discs won't read or show an \"unrecognized disc\" error",
+            "Console ejects discs by itself or keeps beeping",
+            "A disc is stuck inside",
+            "Grinding or clicking noises when a disc spins"
+          ]
         },
         {
           "id": "software-issues",
@@ -37,7 +76,18 @@
           "description": "Stuck on boot, safe-mode loops, corrupted database, or failed updates — we get the system back to normal without wiping your saves where possible.",
           "turnaround": "Same day – 2 days",
           "icon": "AlertTriangle",
-          "platforms": ["PlayStation", "Xbox"]
+          "platforms": [
+            "PlayStation",
+            "Xbox"
+          ],
+          "slug": "console-software-repair",
+          "seoTitle": "PlayStation & Xbox Software Repair",
+          "symptoms": [
+            "Stuck in safe mode or a reboot loop",
+            "Errors after a failed system update",
+            "\"Cannot start the PS4/PS5\" or corrupted database messages",
+            "Console freezes on the logo screen"
+          ]
         },
         {
           "id": "blod",
@@ -45,7 +95,16 @@
           "description": "PS4 boots to a pulsing blue light and shuts down? Usually an HDMI, power, or firmware fault — we identify the exact cause.",
           "turnaround": "2 – 4 days",
           "icon": "AlertOctagon",
-          "platforms": ["PS4"]
+          "platforms": [
+            "PS4"
+          ],
+          "slug": "ps4-blue-light-of-death-repair",
+          "seoTitle": "PS4 Blue Light of Death (BLOD) Repair",
+          "symptoms": [
+            "Pulsing blue light that never turns white",
+            "Console turns off on its own after a few seconds",
+            "No picture and no response to the controller"
+          ]
         },
         {
           "id": "blue-light-beep",
@@ -53,7 +112,16 @@
           "description": "Single beep followed by a blinking blue light on PS4? We diagnose disc drive, power board, or firmware causes.",
           "turnaround": "2 – 4 days",
           "icon": "AlertOctagon",
-          "platforms": ["PS4"]
+          "platforms": [
+            "PS4"
+          ],
+          "slug": "ps4-blue-light-beep-repair",
+          "seoTitle": "PS4 Blue Light & Single Beep Repair",
+          "symptoms": [
+            "One beep, then a blinking blue light",
+            "Console powers off right after the beep",
+            "Happens even with no disc inserted"
+          ]
         },
         {
           "id": "clean-thermal",
@@ -61,7 +129,18 @@
           "description": "Loud fans and shutdowns are usually dust and dried paste. Full teardown, deep clean, and fresh thermal compound.",
           "turnaround": "1 – 2 days",
           "icon": "Wind",
-          "platforms": ["PlayStation", "Xbox"]
+          "platforms": [
+            "PlayStation",
+            "Xbox"
+          ],
+          "slug": "console-cleaning-thermal-paste",
+          "seoTitle": "PS5, PS4 & Xbox Cleaning & Thermal Paste Service",
+          "symptoms": [
+            "Fan is very loud, even in menus",
+            "Console shuts down while gaming",
+            "Body feels very hot around the vents",
+            "Hasn't been opened and cleaned in over a year"
+          ]
         },
         {
           "id": "storage-upgrade",
@@ -69,7 +148,18 @@
           "description": "Out of space? We fit compatible NVMe SSDs into PS5 or Xbox Series X|S and help move your saves over.",
           "turnaround": "Same day – 1 day",
           "icon": "HardDrive",
-          "platforms": ["PS5", "Xbox Series X", "Xbox Series S"]
+          "platforms": [
+            "PS5",
+            "Xbox Series X",
+            "Xbox Series S"
+          ],
+          "slug": "ps5-xbox-ssd-upgrade",
+          "seoTitle": "PS5 & Xbox Series X|S SSD Storage Upgrade",
+          "symptoms": [
+            "\"Not enough free space\" when installing games",
+            "Constantly deleting games to make room",
+            "Want faster load times for a large library"
+          ]
         }
       ]
     },
@@ -77,7 +167,11 @@
       "id": "controller",
       "title": "Controller Repairs",
       "blurb": "DualShock, DualSense, and Xbox controller fixes — usually done same day.",
-      "platforms": ["PS4 Controllers", "PS5 Controllers", "Xbox Controllers"],
+      "platforms": [
+        "PS4 Controllers",
+        "PS5 Controllers",
+        "Xbox Controllers"
+      ],
       "repairs": [
         {
           "id": "stick-drift",
@@ -85,7 +179,19 @@
           "description": "Character walks on its own? We replace the analog stick modules on DualShock 4, DualSense, and Xbox controllers.",
           "turnaround": "Same day – 1 day",
           "icon": "Gamepad2",
-          "platforms": ["PS4", "PS5", "Xbox"]
+          "platforms": [
+            "PS4",
+            "PS5",
+            "Xbox"
+          ],
+          "slug": "controller-stick-drift-repair",
+          "seoTitle": "PS5 DualSense, PS4 & Xbox Controller Stick Drift Repair",
+          "symptoms": [
+            "Character or camera moves on its own",
+            "Stick doesn't return to center",
+            "Aim jumps or feels inconsistent",
+            "Stick clicks (L3/R3) not registering"
+          ]
         },
         {
           "id": "trigger-buttons",
@@ -93,7 +199,19 @@
           "description": "Sticky triggers, dead shoulder buttons, or unresponsive face buttons — we swap the mechs and clean the boards.",
           "turnaround": "Same day – 1 day",
           "icon": "MousePointerClick",
-          "platforms": ["PS4", "PS5", "Xbox"]
+          "platforms": [
+            "PS4",
+            "PS5",
+            "Xbox"
+          ],
+          "slug": "controller-button-trigger-repair",
+          "seoTitle": "PS5, PS4 & Xbox Controller Button & Trigger Repair",
+          "symptoms": [
+            "Sticky or unresponsive buttons",
+            "Trigger stuck down or not registering full press",
+            "Double-presses or missed inputs",
+            "Bumper (L1/R1, LB/RB) not clicking"
+          ]
         },
         {
           "id": "charging-port",
@@ -101,7 +219,19 @@
           "description": "Controller not charging or the cable falls out? Replace the USB port — we handle PS4, PS5, and Xbox controllers.",
           "turnaround": "Same day – 1 day",
           "icon": "BatteryCharging",
-          "platforms": ["PS4", "PS5", "Xbox"]
+          "platforms": [
+            "PS4",
+            "PS5",
+            "Xbox"
+          ],
+          "slug": "controller-charging-port-repair",
+          "seoTitle": "PS5, PS4 & Xbox Controller Charging Port Repair",
+          "symptoms": [
+            "Controller doesn't charge with any cable",
+            "Cable falls out or must be held in place",
+            "Charging light flickers on and off",
+            "Port looks loose or damaged"
+          ]
         }
       ]
     }
